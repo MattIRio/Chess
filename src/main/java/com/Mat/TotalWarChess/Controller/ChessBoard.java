@@ -17,8 +17,17 @@ public class ChessBoard {
     ChessMoves chessMoves = new ChessMoves();
 
     @GetMapping("/chessboard")
-    public String chessboard(Model model) {
-        model.addAttribute("paw_w_img", "images/pawn-w.png");
+    public String chessboard(Model model, HttpSession session) {
+        ImagesSetter imagesSetter = new ImagesSetter();
+        imagesSetter.imagesSetter(model, session);
+
+        String username = (String) session.getAttribute("username");
+        String secondUsername = (String) session.getAttribute("secondUsername");
+
+        model.addAttribute("username", username);
+        model.addAttribute("secondUsername", secondUsername);
+
+//        model.addAttribute("paw_w_img", "images/pawn-w.png");
         return "ChessBoard";
     }
 
@@ -26,6 +35,12 @@ public class ChessBoard {
     public String movePiece(@RequestParam(value = "currentCell") String fromCell,
                             @RequestParam(value = "secondCurrentCell", required = false) String toCell,
                             HttpSession session, Model model) {
+
+        String username = (String) session.getAttribute("username");
+        String secondUsername = (String) session.getAttribute("secondUsername");
+
+        model.addAttribute("username", username);
+        model.addAttribute("secondUsername", secondUsername);
 
         ImagesSetter imagesSetter = new ImagesSetter();
         imagesSetter.imagesSetter(model,session);

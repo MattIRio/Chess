@@ -1,6 +1,7 @@
 package com.Mat.TotalWarChess.Controller;
 
 import com.Mat.TotalWarChess.Model.LoginModel;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,14 +21,14 @@ public class LoginPage {
     }
 
     @PostMapping("/processLogin")
-    public String processLogin(@Valid @ModelAttribute("loginModel")LoginModel loginModel, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
+    public String processLogin(@Valid @ModelAttribute("loginModel") LoginModel loginModel,HttpSession session, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
         if(bindingResult.hasErrors()){
             redirectAttributes.addFlashAttribute("loginModel", loginModel);
             return "loginPage";
         }
-        model.addAttribute("loginModel", loginModel);
-        redirectAttributes.addFlashAttribute("username", loginModel.getUsername());
-        redirectAttributes.addFlashAttribute("secondUsername", loginModel.getSecondUsername());
+        session.setAttribute("username", loginModel.getUsername());
+        session.setAttribute("secondUsername", loginModel.getSecondUsername());
+
         return "redirect:/chessboard";
     }
 }
