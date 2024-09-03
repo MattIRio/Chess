@@ -23,7 +23,7 @@ public class LoginPage {
     @PostMapping("/processLogin")
     public String processLogin(@Valid @ModelAttribute("loginModel") LoginModel loginModel,HttpSession session, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
         if(bindingResult.hasErrors()){
-            redirectAttributes.addFlashAttribute("loginModel", loginModel);
+//            redirectAttributes.addFlashAttribute("loginModel", loginModel);
             return "loginPage";
         }
         session.setAttribute("username", loginModel.getUsername());

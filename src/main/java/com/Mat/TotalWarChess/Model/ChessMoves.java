@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ChessMoves {
 
-    ArrayList<FigureImage> imagesArray = new ArrayList<>();
+    public ArrayList<FigureImage> imagesArray = new ArrayList<>();
 
     public void addFigure(FigureImage figureImage) {
         imagesArray.add(figureImage);
@@ -16,17 +16,6 @@ public class ChessMoves {
 //    public void getImagePath(int number) {
 //        imagesArray.get(number).getPath();
 //    }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

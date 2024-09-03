@@ -18,6 +18,17 @@ public class ChessBoard {
 
     @GetMapping("/chessboard")
     public String chessboard(Model model, HttpSession session) {
+
+        ChessMoves chessMoves = (ChessMoves) session.getAttribute("chessMoves");
+        if (chessMoves == null) {
+            chessMoves = new ChessMoves();
+            session.setAttribute("chessMoves", chessMoves);
+        }
+
+//        for (FigureImage figureImage : chessMoves.imagesArray) {
+//            model.addAttribute(figureImage.getImageName(), figureImage.getPath());
+//        }
+
         ImagesSetter imagesSetter = new ImagesSetter();
         imagesSetter.imagesSetter(model, session);
 
@@ -26,6 +37,8 @@ public class ChessBoard {
 
         model.addAttribute("username", username);
         model.addAttribute("secondUsername", secondUsername);
+
+
 
 //        model.addAttribute("paw_w_img", "images/pawn-w.png");
         return "ChessBoard";
@@ -36,14 +49,21 @@ public class ChessBoard {
                             @RequestParam(value = "secondCurrentCell", required = false) String toCell,
                             HttpSession session, Model model) {
 
+        ChessMoves chessMoves = (ChessMoves) session.getAttribute("chessMoves");
+        if (chessMoves == null) {
+            chessMoves = new ChessMoves();
+            session.setAttribute("chessMoves", chessMoves);
+        }
+
+
         String username = (String) session.getAttribute("username");
         String secondUsername = (String) session.getAttribute("secondUsername");
 
         model.addAttribute("username", username);
         model.addAttribute("secondUsername", secondUsername);
 
-        ImagesSetter imagesSetter = new ImagesSetter();
-        imagesSetter.imagesSetter(model,session);
+//        ImagesSetter imagesSetter = new ImagesSetter();
+//        imagesSetter.imagesSetter(model,session);
 
         String firstCellSaver = (String) session.getAttribute("firstCellSaver");
         String secondCellSaver = (String) session.getAttribute("secondCellSaver");
@@ -92,6 +112,10 @@ public class ChessBoard {
         System.out.println("2nd " + secondCellSaver);
         System.out.println("");
 
+
+        for (FigureImage figureImage : chessMoves.imagesArray) {
+            model.addAttribute(figureImage.getImageName(), figureImage.getPath());
+        }
 
 
 
