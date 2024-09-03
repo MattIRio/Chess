@@ -1,0 +1,111 @@
+body {
+position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.centered-text {
+    position: absolute; /* Абсолютное позиционирование для размещения текста */
+    top: 10px; /* Расстояние от верхнего края экрана */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Смещение влево на 50% ширины элемента для точного центрирования */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Полужирное начертание текста */
+    text-align: center; /* Выравнивание текста по центру */
+    /* Дополнительное оформление по вашему выбору */
+}
+.vertical-table {
+    position: absolute; /* Абсолютное позиционирование для размещения в углах */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Отступ между элементами */
+}
+
+.top-right {
+    top: 10px; /* Расстояние от верхнего края экрана */
+    right: 10px; /* Расстояние от правого края экрана */
+}
+
+.bottom-left {
+    bottom: 10px; /* Расстояние от нижнего края экрана */
+    left: 10px; /* Расстояние от левого края экрана */
+}
+
+.table-cell {
+    background-color: #fff; /* Цвет фона ячеек таблицы */
+    border: 1px solid #000; /* Рамка ячеек таблицы */
+    padding: 5px; /* Внутренний отступ ячеек таблицы */
+    text-align: center; /* Выравнивание текста по центру */
+    /* Дополнительное оформление по вашему выбору */
+}
+
+
+.label {
+  position: fixed; /* Фиксированное позиционирование для размещения в левом верхнем углу */
+  top: 10px; /* Расстояние от верхнего края экрана */
+  left: 10px; /* Расстояние от левого края экрана */
+  padding: 5px 10px;
+  background-color: #fff; /* Фоновый цвет таблички */
+  border: 1px solid #000; /* Граница таблички */
+  border-radius: 3px; /* Скругление углов таблички */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для таблички */
+  z-index: 10; /* Чтобы табличка была выше шахматной доски */
+}
+.another-label {
+  position: fixed; /* Фиксированное позиционирование для размещения в правом нижнем углу */
+  bottom: 10px; /* Расстояние от нижнего края экрана */
+  right: 10px; /* Расстояние от правого края экрана */
+  padding: 5px 10px;
+  background-color: #fff; /* Фоновый цвет таблички */
+  border: 1px solid #000; /* Граница таблички */
+  border-radius: 3px; /* Скругление углов таблички */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для таблички */
+  z-index: 10; /* Чтобы табличка была выше шахматной доски */
+}
+
+.container {
+  position: relative; /* Убедитесь, что контейнер относительно позиционируется */
+  margin-top: 50px; /* Если требуется для отступа от таблички */
+}
+
+.chessboard {
+    margin-top: -30px;
+    display: flex;
+     border: 4px solid #000;
+    flex-direction: column;
+    width: 1500px; /* Увеличиваем ширину доски */
+    height: 700px; /* Увеличиваем высоту доски */
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.cell {
+    width: 70px; /* Увеличиваем ширину клетки */
+    height: 70px; /* Увеличиваем высоту клетки */
+    border: 1px solid #fffff; /* Граница клеток */
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: transparent; /* Фон кнопки */
+    cursor: pointer; /* Изменяем курсор на указатель */
+    transition: background-color 0.3s, transform 0.1s; /* Плавный переход для фона и эффекта нажатия */
+}
+
+.white {
+    background-color: #efd0a1;
+}
+
+.black {
+    background-color: #984018;
+}
+
+.cell:active {
+    background-color: rgba(0, 0, 0, 0.3); /* Изменение фона при нажатии */
+    transform: scale(0.95); /* Эффект уменьшения кнопки при нажатии */
+}

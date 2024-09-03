@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шахматная доска</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+
+          background-color: #f7f7ac; /* Светлый желтоватый цвет фона */
+          margin: 0; /* Удаление стандартных отступов */
+          padding: 0; /* Удаление стандартных внутренних отступов */
+          height: 100vh; /* Полная высота экрана */
+          overflow: hidden; /* Удаление полос прокрутки */
+        }
+    </style>
+</head>
+<body>
+    <div class="label" ><span th:text="${username}"></span></div>
+    <div class="another-label"><span th:text="${secondUsername}"></span></div>
+    <div class="centered-text">TOTAL WAR CHESS</div>
+        <div class="vertical-table top-right">
+            <div class="table-cell">Текст 1</div>
+            <div class="table-cell">Текст 2</div>
+            <div class="table-cell">Текст 3</div>
+            <!-- Добавьте больше текста по мере необходимости -->
+        </div>
+
+    <div class="vertical-table bottom-left">
+            <div class="table-cell">Текст A</div>
+            <div class="table-cell">Текст B</div>
+            <div class="table-cell">Текст C</div>
+            <!-- Добавьте больше текста по мере необходимости -->
+        </div>
+
+<div class="chessboard">
+    <form action="/chessboard" method="POST">
+        <input type="hidden" name="fromCell" value="">
+        <input type="hidden" name="toCell" value="">
+    <div class="row">
+        <button class="cell black" data-position="0-0" name="currentCell" value="cell1_1">
+            <img  th:src="@{${paw_w_img}}" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-1" name="currentCell" value=cell1_2>
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-2" name="currentCell" value=cell1_3>
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-3" name="currentCell" value=cell1_4>
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-4" name="currentCell" value=cell1_5>
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-5" name="currentCell" value=cell1_6>
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-6" name="currentCell" value=cell1_7>
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-7" name="currentCell" value=cell1_8>
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-8" name="currentCell" value=cell1_9>
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-9" name="currentCell" value="cell1_10">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-10" name="currentCell" value="cell1_11">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-11" name="currentCell" value="cell1_12">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-12" name="currentCell" value="cell1_13">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-13" name="currentCell" value="cell1_14">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-14" name="currentCell" value="cell1_15">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-15" name="currentCell" value="cell1_16">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-16" name="currentCell" value="cell1_17">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-17" name="currentCell" value="cell1_18">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-18" name="currentCell" value="cell1_19">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-19" name="currentCell" value="cell1_20">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-20" name="currentCell" value="cell1_21">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-21" name="currentCell" value="cell1_22">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell black" data-position="0-22" name="currentCell" value="cell1_23">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+        <button class="cell white" data-position="0-23" name="currentCell" value="cell1_24">
+            <img th:src="@{${paw_w_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+        </button>
+    </div>
+    <!-- Ряд 2 -->
+    <div class="row">
+        <button class="cell white" data-position="1-0" name="currentCell" value="cell2_1">
+            <img  th:src="@{${cell2_1_img}}" style="width: 50px; height: 50px;"></button>
+        <button class="cell black" data-position="1-1"></button>
+        <button class="cell white" data-position="1-2"></button>
+        <button class="cell black" data-position="1-3"></button>
+        <button class="cell white" data-position="1-4"></button>
+        <button class="cell black" data-position="1-5"></button>
+        <button class="cell white" data-position="1-6"></button>
+        <button class="cell black" data-position="1-7"></button>
+        <button class="cell white" data-position="1-8"></button>
+        <button class="cell black" data-position="1-9"></button>
+        <button class="cell white" data-position="1-10"></button>
+        <button class="cell black" data-position="1-11"></button>
+        <button class="cell white" data-position="1-12"></button>
+        <button class="cell black" data-position="1-13"></button>
+        <button class="cell white" data-position="1-14"></button>
+        <button class="cell black" data-position="1-15"></button>
+        <button class="cell white" data-position="1-16"></button>
+        <button class="cell black" data-position="1-17"></button>
+        <button class="cell white" data-position="1-18"></button>
+        <button class="cell black" data-position="1-19"></button>
+        <button class="cell white" data-position="1-20"></button>
+        <button class="cell black" data-position="1-21"></button>
+        <button class="cell white" data-position="1-22"></button>
+        <button class="cell black" data-position="1-23"></button>
+    </div>
+    <!-- Ряд 3 -->
+    <div class="row">
+        <button class="cell black" data-position="2-0"></button>
+        <button class="cell white" data-position="2-1"></button>
+        <button class="cell black" data-position="2-2"></button>
+        <button class="cell white" data-position="2-3"></button>
+        <button class="cell black" data-position="2-4"></button>
+        <button class="cell white" data-position="2-5"></button>
+        <button class="cell black" data-position="2-6"></button>
+        <button class="cell white" data-position="2-7"></button>
+        <button class="cell black" data-position="2-8"></button>
+        <button class="cell white" data-position="2-9"></button>
+        <button class="cell black" data-position="2-10"></button>
+        <button class="cell white" data-position="2-11"></button>
+        <button class="cell black" data-position="2-12"></button>
+        <button class="cell white" data-position="2-13"></button>
+        <button class="cell black" data-position="2-14"></button>
+        <button class="cell white" data-position="2-15"></button>
+        <button class="cell black" data-position="2-16"></button>
+        <button class="cell white" data-position="2-17"></button>
+        <button class="cell black" data-position="2-18"></button>
+        <button class="cell white" data-position="2-19"></button>
+        <button class="cell black" data-position="2-20"></button>
+        <button class="cell white" data-position="2-21"></button>
+        <button class="cell black" data-position="2-22"></button>
+        <button class="cell white" data-position="2-23"></button>
+    </div>
+    <!-- Ряд 4 -->
+    <div class="row">
+        <button class="cell white" data-position="3-0"></button>
+        <button class="cell black" data-position="3-1"></button>
+        <button class="cell white" data-position="3-2"></button>
+        <button class="cell black" data-position="3-3"></button>
+        <button class="cell white" data-position="3-4"></button>
+        <button class="cell black" data-position="3-5"></button>
+        <button class="cell white" data-position="3-6"></button>
+        <button class="cell black" data-position="3-7"></button>
+        <button class="cell white" data-position="3-8"></button>
+        <button class="cell black" data-position="3-9"></button>
+        <button class="cell white" data-position="3-10"></button>
+        <button class="cell black" data-position="3-11"></button>
+        <button class="cell white" data-position="3-12"></button>
+        <button class="cell black" data-position="3-13"></button>
+        <button class="cell white" data-position="3-14"></button>
+        <button class="cell black" data-position="3-15"></button>
+        <button class="cell white" data-position="3-16"></button>
+        <button class="cell black" data-position="3-17"></button>
+        <button class="cell white" data-position="3-18"></button>
+        <button class="cell black" data-position="3-19"></button>
+        <button class="cell white" data-position="3-20"></button>
+        <button class="cell black" data-position="3-21"></button>
+        <button class="cell white" data-position="3-22"></button>
+        <button class="cell black" data-position="3-23"></button>
+    </div>
+    <!-- Ряд 5 -->
+    <div class="row">
+        <button class="cell black" data-position="4-0"></button>
+        <button class="cell white" data-position="4-1"></button>
+        <button class="cell black" data-position="4-2"></button>
+        <button class="cell white" data-position="4-3"></button>
+        <button class="cell black" data-position="4-4"></button>
+        <button class="cell white" data-position="4-5"></button>
+        <button class="cell black" data-position="4-6"></button>
+        <button class="cell white" data-position="4-7"></button>
+        <button class="cell black" data-position="4-8"></button>
+        <button class="cell white" data-position="4-9"></button>
+        <button class="cell black" data-position="4-10"></button>
+        <button class="cell white" data-position="4-11"></button>
+        <button class="cell black" data-position="4-12"></button>
+        <button class="cell white" data-position="4-13"></button>
+        <button class="cell black" data-position="4-14"></button>
+        <button class="cell white" data-position="4-15"></button>
+        <button class="cell black" data-position="4-16"></button>
+        <button class="cell white" data-position="4-17"></button>
+        <button class="cell black" data-position="4-18"></button>
+        <button class="cell white" data-position="4-19"></button>
+        <button class="cell black" data-position="4-20"></button>
+        <button class="cell white" data-position="4-21"></button>
+        <button class="cell black" data-position="4-22"></button>
+        <button class="cell white" data-position="4-23"></button>
+    </div>
+    <!-- Ряд 6 -->
+    <div class="row">
+        <button class="cell white" data-position="5-0"></button>
+        <button class="cell black" data-position="5-1"></button>
+        <button class="cell white" data-position="5-2"></button>
+        <button class="cell black" data-position="5-3"></button>
+        <button class="cell white" data-position="5-4"></button>
+        <button class="cell black" data-position="5-5"></button>
+        <button class="cell white" data-position="5-6"></button>
+        <button class="cell black" data-position="5-7"></button>
+        <button class="cell white" data-position="5-8"></button>
+        <button class="cell black" data-position="5-9"></button>
+        <button class="cell white" data-position="5-10"></button>
+        <button class="cell black" data-position="5-11"></button>
+        <button class="cell white" data-position="5-12"></button>
+        <button class="cell black" data-position="5-13"></button>
+        <button class="cell white" data-position="5-14"></button>
+        <button class="cell black" data-position="5-15"></button>
+        <button class="cell white" data-position="5-16"></button>
+        <button class="cell black" data-position="5-17"></button>
+        <button class="cell white" data-position="5-18"></button>
+        <button class="cell black" data-position="5-19"></button>
+        <button class="cell white" data-position="5-20"></button>
+        <button class="cell black" data-position="5-21"></button>
+        <button class="cell white" data-position="5-22"></button>
+        <button class="cell black" data-position="5-23"></button>
+    </div>
+    <!-- Ряд 7 -->
+    <div class="row">
+        <button class="cell black" data-position="6-0"></button>
+        <button class="cell white" data-position="6-1"></button>
+        <button class="cell black" data-position="6-2"></button>
+        <button class="cell white" data-position="6-3"></button>
+        <button class="cell black" data-position="6-4"></button>
+        <button class="cell white" data-position="6-5"></button>
+        <button class="cell black" data-position="6-6"></button>
+        <button class="cell white" data-position="6-7"></button>
+        <button class="cell black" data-position="6-8"></button>
+        <button class="cell white" data-position="6-9"></button>
+        <button class="cell black" data-position="6-10"></button>
+        <button class="cell white" data-position="6-11"></button>
+        <button class="cell black" data-position="6-12"></button>
+        <button class="cell white" data-position="6-13"></button>
+        <button class="cell black" data-position="6-14"></button>
+        <button class="cell white" data-position="6-15"></button>
+        <button class="cell black" data-position="6-16"></button>
+        <button class="cell white" data-position="6-17"></button>
+        <button class="cell black" data-position="6-18"></button>
+        <button class="cell white" data-position="6-19"></button>
+        <button class="cell black" data-position="6-20"></button>
+        <button class="cell white" data-position="6-21"></button>
+        <button class="cell black" data-position="6-22"></button>
+        <button class="cell white" data-position="6-23"></button>
+    </div>
+    <!-- Ряд 8 -->
+    <div class="row">
+        <button class="cell white" data-position="7-0"></button>
+        <button class="cell black" data-position="7-1"></button>
+        <button class="cell white" data-position="7-2"></button>
+        <button class="cell black" data-position="7-3"></button>
+        <button class="cell white" data-position="7-4"></button>
+        <button class="cell black" data-position="7-5"></button>
+        <button class="cell white" data-position="7-6"></button>
+        <button class="cell black" data-position="7-7"></button>
+        <button class="cell white" data-position="7-8"></button>
+        <button class="cell black" data-position="7-9"></button>
+        <button class="cell white" data-position="7-10"></button>
+        <button class="cell black" data-position="7-11"></button>
+        <button class="cell white" data-position="7-12"></button>
+        <button class="cell black" data-position="7-13"></button>
+        <button class="cell white" data-position="7-14"></button>
+        <button class="cell black" data-position="7-15"></button>
+        <button class="cell white" data-position="7-16"></button>
+        <button class="cell black" data-position="7-17"></button>
+        <button class="cell white" data-position="7-18"></button>
+        <button class="cell black" data-position="7-19"></button>
+        <button class="cell white" data-position="7-20"></button>
+        <button class="cell black" data-position="7-21"></button>
+        <button class="cell white" data-position="7-22"></button>
+        <button class="cell black" data-position="7-23"></button>
+    </div>
+    <!-- Ряд 9 -->
+    <div class="row">
+        <button class="cell black" data-position="8-0"></button>
+        <button class="cell white" data-position="8-1"></button>
+        <button class="cell black" data-position="8-2"></button>
+        <button class="cell white" data-position="8-3"></button>
+        <button class="cell black" data-position="8-4"></button>
+        <button class="cell white" data-position="8-5"></button>
+        <button class="cell black" data-position="8-6"></button>
+        <button class="cell white" data-position="8-7"></button>
+        <button class="cell black" data-position="8-8"></button>
+        <button class="cell white" data-position="8-9"></button>
+        <button class="cell black" data-position="8-10"></button>
+        <button class="cell white" data-position="8-11"></button>
+        <button class="cell black" data-position="8-12"></button>
+        <button class="cell white" data-position="8-13"></button>
+        <button class="cell black" data-position="8-14"></button>
+        <button class="cell white" data-position="8-15"></button>
+        <button class="cell black" data-position="8-16"></button>
+        <button class="cell white" data-position="8-17"></button>
+        <button class="cell black" data-position="8-18"></button>
+        <button class="cell white" data-position="8-19"></button>
+        <button class="cell black" data-position="8-20"></button>
+        <button class="cell white" data-position="8-21"></button>
+        <button class="cell black" data-position="8-22"></button>
+        <button class="cell white" data-position="8-23"></button>
+    </div>
+    <!-- Ряд 10 -->
+    <div class="row">
+        <button class="cell white" data-position="9-0"></button>
+        <button class="cell black" data-position="9-1"></button>
+        <button class="cell white" data-position="9-2"></button>
+        <button class="cell black" data-position="9-3"></button>
+        <button class="cell white" data-position="9-4"></button>
+        <button class="cell black" data-position="9-5"></button>
+        <button class="cell white" data-position="9-6"></button>
+        <button class="cell black" data-position="9-7"></button>
+        <button class="cell white" data-position="9-8"></button>
+        <button class="cell black" data-position="9-9"></button>
+        <button class="cell white" data-position="9-10"></button>
+        <button class="cell black" data-position="9-11"></button>
+        <button class="cell white" data-position="9-12"></button>
+        <button class="cell black" data-position="9-13"></button>
+        <button class="cell white" data-position="9-14"></button>
+        <button class="cell black" data-position="9-15"></button>
+        <button class="cell white" data-position="9-16"></button>
+        <button class="cell black" data-position="9-17"></button>
+        <button class="cell white" data-position="9-18"></button>
+        <button class="cell black" data-position="9-19"></button>
+        <button class="cell white" data-position="9-20"></button>
+        <button class="cell black" data-position="9-21"></button>
+        <button class="cell white" data-position="9-22"></button>
+        <button class="cell black" data-position="9-23"></button>
+    </div>
+        <input type="hidden" name="toCell" value="cell1_3">
+    </form>
+</div>
+    </div>
+</div>
+</body>
+</html>
