@@ -21,10 +21,11 @@ public class LoginPage {
     }
 
     @PostMapping("/processLogin")
-    public String processLogin(@Valid @ModelAttribute("loginModel") LoginModel loginModel,HttpSession session, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
+    public String processLogin(@Valid @ModelAttribute("loginModel") LoginModel loginModel, BindingResult bindingResult,HttpSession session, Model model){
         if(bindingResult.hasErrors()){
-//            redirectAttributes.addFlashAttribute("loginModel", loginModel);
+            model.addAttribute("loginModel", loginModel);
             return "loginPage";
+
         }
         session.setAttribute("username", loginModel.getUsername());
         session.setAttribute("secondUsername", loginModel.getSecondUsername());

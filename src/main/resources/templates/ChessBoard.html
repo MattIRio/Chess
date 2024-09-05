@@ -14,353 +14,863 @@
           height: 100vh; /* Полная высота экрана */
           overflow: hidden; /* Удаление полос прокрутки */
         }
+
+.corner-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+.corner-buttonn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #deab19;
+}
+
+/* Контейнер для кнопок */
+.button-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Расстояние между кнопками */
+}
+
+/* Переменные для позиционирования кнопок */
+:root {
+  --top-right-top: 110px;
+  --top-right-right: 70px;
+  --bottom-left-bottom: 140px;
+  --bottom-left-left: 70px;
+}
+
+/* Позиционирование кнопок у правого верхнего угла */
+.button-container.top-right {
+  top: var(--top-right-top);
+  right: var(--top-right-right);
+}
+
+/* Позиционирование кнопок у левого нижнего угла */
+.button-container.bottom-left {
+  bottom: var(--bottom-left-bottom);
+  left: var(--bottom-left-left);
+}
+
+/* Стили для шахматной доски и вертикальных таблиц */
+.chess-board-container {
+  position: relative; /* Обеспечивает, что кнопки будут позиционироваться относительно этого контейнера */
+}
+
+.vertical-table {
+  position: absolute;
+  /* Добавьте любые другие стили для таблиц */
+}
+
+.vertical-table.top-right {
+  top: 0;
+  right: 0;
+  /* Можно добавить дополнительные стили для этого положения */
+}
+
+.vertical-table.bottom-left {
+  bottom: 0;
+  left: 0;
+  /* Можно добавить дополнительные стили для этого положения */
+}
+
     </style>
 </head>
 <body>
-    <div class="label" ><span th:text="${username}"></span></div>
-    <div class="another-label"><span th:text="${secondUsername}"></span></div>
-    <div class="centered-text">TOTAL WAR CHESS</div>
-        <div class="vertical-table top-right">
-            <div class="table-cell">Текст 1</div>
-            <div class="table-cell">Текст 2</div>
-            <div class="table-cell">Текст 3</div>
-            <!-- Добавьте больше текста по мере необходимости -->
-        </div>
+<div class="label" ><span th:text="${username}"></span></div>
+<div class="another-label"><span th:text="${secondUsername}"></span></div>
+<div class="centered-text">TOTAL WAR CHESS</div>
+<div class="vertical-table top-right">
+    <div class="table-cell">Текст 1</div>
+    <div class="table-cell">Текст 2</div>
+    <div class="table-cell">Текст 3</div>
+    <!-- Добавьте больше текста по мере необходимости -->
+</div>
 
-    <div class="vertical-table bottom-left">
-            <div class="table-cell">Текст A</div>
-            <div class="table-cell">Текст B</div>
-            <div class="table-cell">Текст C</div>
-            <!-- Добавьте больше текста по мере необходимости -->
-        </div>
+<div class="vertical-table bottom-left">
+    <div class="table-cell">Текст A</div>
+    <div class="table-cell">Текст B</div>
+    <div class="table-cell">Текст C</div>
+    <!-- Добавьте больше текста по мере необходимости -->
+</div>
 
 <div class="chessboard">
     <form action="/chessboard" method="POST">
         <input type="hidden" name="fromCell" value="">
         <input type="hidden" name="toCell" value="">
-    <div class="row">
-        <button class="cell black" data-position="0-0" name="currentCell" value="cell1_1">
-            <img  th:src="@{${cell1_1_img}}" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-1" name="currentCell" value=cell1_2>
-            <img th:src="@{${cell1_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-2" name="currentCell" value=cell1_3>
-            <img th:src="@{${cell1_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-3" name="currentCell" value=cell1_4>
-            <img th:src="@{${cell1_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-4" name="currentCell" value=cell1_5>
-            <img th:src="@{${cell1_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-5" name="currentCell" value=cell1_6>
-            <img th:src="@{${cell1_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-8" name="currentCell" value=cell1_9>
-            <img th:src="@{${cell1_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-9" name="currentCell" value="cell1_10">
-            <img th:src="@{${cell1_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-10" name="currentCell" value="cell1_11">
-            <img th:src="@{${cell1_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-11" name="currentCell" value="cell1_12">
-            <img th:src="@{${cell1_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-12" name="currentCell" value="cell1_13">
-            <img th:src="@{${cell1_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-13" name="currentCell" value="cell1_14">
-            <img th:src="@{${cell1_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-14" name="currentCell" value="cell1_15">
-            <img th:src="@{${cell1_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-15" name="currentCell" value="cell1_16">
-            <img th:src="@{${cell1_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-16" name="currentCell" value="cell1_17">
-            <img th:src="@{${cell1_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-17" name="currentCell" value="cell1_18">
-            <img th:src="@{${cell1_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-18" name="currentCell" value="cell1_19">
-            <img th:src="@{${cell1_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-19" name="currentCell" value="cell1_20">
-            <img th:src="@{${cell1_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-20" name="currentCell" value="cell1_21">
-            <img th:src="@{${cell1_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-21" name="currentCell" value="cell1_22">
-            <img th:src="@{${cell1_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-22" name="currentCell" value="cell1_23">
-            <img th:src="@{${cell1_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-23" name="currentCell" value="cell1_24">
-            <img th:src="@{${cell1_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell black" data-position="0-6" name="currentCell" value=cell1_7>
-            <img th:src="@{${cell1_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
-        <button class="cell white" data-position="0-7" name="currentCell" value=cell1_8>
-            <img th:src="@{${cell1_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
-        </button>
 
-    </div>
-    <!-- Ряд 2 -->
-    <div class="row">
-        <button class="cell white" data-position="1-0" name="currentCell" value="cell2_1">
-            <img  th:src="@{${cell2_1_img}}" style="width: 50px; height: 50px;"></button>
-        <button class="cell black" data-position="1-1"></button>
-        <button class="cell white" data-position="1-2"></button>
-        <button class="cell black" data-position="1-3"></button>
-        <button class="cell white" data-position="1-4"></button>
-        <button class="cell black" data-position="1-5"></button>
-        <button class="cell white" data-position="1-6"></button>
-        <button class="cell black" data-position="1-7"></button>
-        <button class="cell white" data-position="1-8"></button>
-        <button class="cell black" data-position="1-9"></button>
-        <button class="cell white" data-position="1-10"></button>
-        <button class="cell black" data-position="1-11"></button>
-        <button class="cell white" data-position="1-12"></button>
-        <button class="cell black" data-position="1-13"></button>
-        <button class="cell white" data-position="1-14"></button>
-        <button class="cell black" data-position="1-15"></button>
-        <button class="cell white" data-position="1-16"></button>
-        <button class="cell black" data-position="1-17"></button>
-        <button class="cell white" data-position="1-18"></button>
-        <button class="cell black" data-position="1-19"></button>
-        <button class="cell white" data-position="1-20"></button>
-        <button class="cell black" data-position="1-21"></button>
-        <button class="cell white" data-position="1-22"></button>
-        <button class="cell black" data-position="1-23"></button>
-    </div>
-    <!-- Ряд 3 -->
-    <div class="row">
-        <button class="cell black" data-position="2-0"></button>
-        <button class="cell white" data-position="2-1"></button>
-        <button class="cell black" data-position="2-2"></button>
-        <button class="cell white" data-position="2-3"></button>
-        <button class="cell black" data-position="2-4"></button>
-        <button class="cell white" data-position="2-5"></button>
-        <button class="cell black" data-position="2-6"></button>
-        <button class="cell white" data-position="2-7"></button>
-        <button class="cell black" data-position="2-8"></button>
-        <button class="cell white" data-position="2-9"></button>
-        <button class="cell black" data-position="2-10"></button>
-        <button class="cell white" data-position="2-11"></button>
-        <button class="cell black" data-position="2-12"></button>
-        <button class="cell white" data-position="2-13"></button>
-        <button class="cell black" data-position="2-14"></button>
-        <button class="cell white" data-position="2-15"></button>
-        <button class="cell black" data-position="2-16"></button>
-        <button class="cell white" data-position="2-17"></button>
-        <button class="cell black" data-position="2-18"></button>
-        <button class="cell white" data-position="2-19"></button>
-        <button class="cell black" data-position="2-20"></button>
-        <button class="cell white" data-position="2-21"></button>
-        <button class="cell black" data-position="2-22"></button>
-        <button class="cell white" data-position="2-23"></button>
-    </div>
-    <!-- Ряд 4 -->
-    <div class="row">
-        <button class="cell white" data-position="3-0"></button>
-        <button class="cell black" data-position="3-1"></button>
-        <button class="cell white" data-position="3-2"></button>
-        <button class="cell black" data-position="3-3"></button>
-        <button class="cell white" data-position="3-4"></button>
-        <button class="cell black" data-position="3-5"></button>
-        <button class="cell white" data-position="3-6"></button>
-        <button class="cell black" data-position="3-7"></button>
-        <button class="cell white" data-position="3-8"></button>
-        <button class="cell black" data-position="3-9"></button>
-        <button class="cell white" data-position="3-10"></button>
-        <button class="cell black" data-position="3-11"></button>
-        <button class="cell white" data-position="3-12"></button>
-        <button class="cell black" data-position="3-13"></button>
-        <button class="cell white" data-position="3-14"></button>
-        <button class="cell black" data-position="3-15"></button>
-        <button class="cell white" data-position="3-16"></button>
-        <button class="cell black" data-position="3-17"></button>
-        <button class="cell white" data-position="3-18"></button>
-        <button class="cell black" data-position="3-19"></button>
-        <button class="cell white" data-position="3-20"></button>
-        <button class="cell black" data-position="3-21"></button>
-        <button class="cell white" data-position="3-22"></button>
-        <button class="cell black" data-position="3-23"></button>
-    </div>
-    <!-- Ряд 5 -->
-    <div class="row">
-        <button class="cell black" data-position="4-0"></button>
-        <button class="cell white" data-position="4-1"></button>
-        <button class="cell black" data-position="4-2"></button>
-        <button class="cell white" data-position="4-3"></button>
-        <button class="cell black" data-position="4-4"></button>
-        <button class="cell white" data-position="4-5"></button>
-        <button class="cell black" data-position="4-6"></button>
-        <button class="cell white" data-position="4-7"></button>
-        <button class="cell black" data-position="4-8"></button>
-        <button class="cell white" data-position="4-9"></button>
-        <button class="cell black" data-position="4-10"></button>
-        <button class="cell white" data-position="4-11"></button>
-        <button class="cell black" data-position="4-12"></button>
-        <button class="cell white" data-position="4-13"></button>
-        <button class="cell black" data-position="4-14"></button>
-        <button class="cell white" data-position="4-15"></button>
-        <button class="cell black" data-position="4-16"></button>
-        <button class="cell white" data-position="4-17"></button>
-        <button class="cell black" data-position="4-18"></button>
-        <button class="cell white" data-position="4-19"></button>
-        <button class="cell black" data-position="4-20"></button>
-        <button class="cell white" data-position="4-21"></button>
-        <button class="cell black" data-position="4-22"></button>
-        <button class="cell white" data-position="4-23"></button>
-    </div>
-    <!-- Ряд 6 -->
-    <div class="row">
-        <button class="cell white" data-position="5-0"></button>
-        <button class="cell black" data-position="5-1"></button>
-        <button class="cell white" data-position="5-2"></button>
-        <button class="cell black" data-position="5-3"></button>
-        <button class="cell white" data-position="5-4"></button>
-        <button class="cell black" data-position="5-5"></button>
-        <button class="cell white" data-position="5-6"></button>
-        <button class="cell black" data-position="5-7"></button>
-        <button class="cell white" data-position="5-8"></button>
-        <button class="cell black" data-position="5-9"></button>
-        <button class="cell white" data-position="5-10"></button>
-        <button class="cell black" data-position="5-11"></button>
-        <button class="cell white" data-position="5-12"></button>
-        <button class="cell black" data-position="5-13"></button>
-        <button class="cell white" data-position="5-14"></button>
-        <button class="cell black" data-position="5-15"></button>
-        <button class="cell white" data-position="5-16"></button>
-        <button class="cell black" data-position="5-17"></button>
-        <button class="cell white" data-position="5-18"></button>
-        <button class="cell black" data-position="5-19"></button>
-        <button class="cell white" data-position="5-20"></button>
-        <button class="cell black" data-position="5-21"></button>
-        <button class="cell white" data-position="5-22"></button>
-        <button class="cell black" data-position="5-23"></button>
-    </div>
-    <!-- Ряд 7 -->
-    <div class="row">
-        <button class="cell black" data-position="6-0"></button>
-        <button class="cell white" data-position="6-1"></button>
-        <button class="cell black" data-position="6-2"></button>
-        <button class="cell white" data-position="6-3"></button>
-        <button class="cell black" data-position="6-4"></button>
-        <button class="cell white" data-position="6-5"></button>
-        <button class="cell black" data-position="6-6"></button>
-        <button class="cell white" data-position="6-7"></button>
-        <button class="cell black" data-position="6-8"></button>
-        <button class="cell white" data-position="6-9"></button>
-        <button class="cell black" data-position="6-10"></button>
-        <button class="cell white" data-position="6-11"></button>
-        <button class="cell black" data-position="6-12"></button>
-        <button class="cell white" data-position="6-13"></button>
-        <button class="cell black" data-position="6-14"></button>
-        <button class="cell white" data-position="6-15"></button>
-        <button class="cell black" data-position="6-16"></button>
-        <button class="cell white" data-position="6-17"></button>
-        <button class="cell black" data-position="6-18"></button>
-        <button class="cell white" data-position="6-19"></button>
-        <button class="cell black" data-position="6-20"></button>
-        <button class="cell white" data-position="6-21"></button>
-        <button class="cell black" data-position="6-22"></button>
-        <button class="cell white" data-position="6-23"></button>
-    </div>
-    <!-- Ряд 8 -->
-    <div class="row">
-        <button class="cell white" data-position="7-0"></button>
-        <button class="cell black" data-position="7-1"></button>
-        <button class="cell white" data-position="7-2"></button>
-        <button class="cell black" data-position="7-3"></button>
-        <button class="cell white" data-position="7-4"></button>
-        <button class="cell black" data-position="7-5"></button>
-        <button class="cell white" data-position="7-6"></button>
-        <button class="cell black" data-position="7-7"></button>
-        <button class="cell white" data-position="7-8"></button>
-        <button class="cell black" data-position="7-9"></button>
-        <button class="cell white" data-position="7-10"></button>
-        <button class="cell black" data-position="7-11"></button>
-        <button class="cell white" data-position="7-12"></button>
-        <button class="cell black" data-position="7-13"></button>
-        <button class="cell white" data-position="7-14"></button>
-        <button class="cell black" data-position="7-15"></button>
-        <button class="cell white" data-position="7-16"></button>
-        <button class="cell black" data-position="7-17"></button>
-        <button class="cell white" data-position="7-18"></button>
-        <button class="cell black" data-position="7-19"></button>
-        <button class="cell white" data-position="7-20"></button>
-        <button class="cell black" data-position="7-21"></button>
-        <button class="cell white" data-position="7-22"></button>
-        <button class="cell black" data-position="7-23"></button>
-    </div>
-    <!-- Ряд 9 -->
-    <div class="row">
-        <button class="cell black" data-position="8-0"></button>
-        <button class="cell white" data-position="8-1"></button>
-        <button class="cell black" data-position="8-2"></button>
-        <button class="cell white" data-position="8-3"></button>
-        <button class="cell black" data-position="8-4"></button>
-        <button class="cell white" data-position="8-5"></button>
-        <button class="cell black" data-position="8-6"></button>
-        <button class="cell white" data-position="8-7"></button>
-        <button class="cell black" data-position="8-8"></button>
-        <button class="cell white" data-position="8-9"></button>
-        <button class="cell black" data-position="8-10"></button>
-        <button class="cell white" data-position="8-11"></button>
-        <button class="cell black" data-position="8-12"></button>
-        <button class="cell white" data-position="8-13"></button>
-        <button class="cell black" data-position="8-14"></button>
-        <button class="cell white" data-position="8-15"></button>
-        <button class="cell black" data-position="8-16"></button>
-        <button class="cell white" data-position="8-17"></button>
-        <button class="cell black" data-position="8-18"></button>
-        <button class="cell white" data-position="8-19"></button>
-        <button class="cell black" data-position="8-20"></button>
-        <button class="cell white" data-position="8-21"></button>
-        <button class="cell black" data-position="8-22"></button>
-        <button class="cell white" data-position="8-23"></button>
-    </div>
-    <!-- Ряд 10 -->
-    <div class="row">
-        <button class="cell white" data-position="9-0"></button>
-        <button class="cell black" data-position="9-1"></button>
-        <button class="cell white" data-position="9-2"></button>
-        <button class="cell black" data-position="9-3"></button>
-        <button class="cell white" data-position="9-4"></button>
-        <button class="cell black" data-position="9-5"></button>
-        <button class="cell white" data-position="9-6"></button>
-        <button class="cell black" data-position="9-7"></button>
-        <button class="cell white" data-position="9-8"></button>
-        <button class="cell black" data-position="9-9"></button>
-        <button class="cell white" data-position="9-10"></button>
-        <button class="cell black" data-position="9-11"></button>
-        <button class="cell white" data-position="9-12"></button>
-        <button class="cell black" data-position="9-13"></button>
-        <button class="cell white" data-position="9-14"></button>
-        <button class="cell black" data-position="9-15"></button>
-        <button class="cell white" data-position="9-16"></button>
-        <button class="cell black" data-position="9-17"></button>
-        <button class="cell white" data-position="9-18"></button>
-        <button class="cell black" data-position="9-19"></button>
-        <button class="cell white" data-position="9-20"></button>
-        <button class="cell black" data-position="9-21"></button>
-        <button class="cell white" data-position="9-22"></button>
-        <button class="cell black" data-position="9-23"></button>
-    </div>
-        <input type="hidden" name="toCell" value="cell1_3">
+        <!-- ROW 1 -->
+        <div class="row">
+            <button class="cell black" data-position="1-1" name="currentCell" value="cell1_1">
+                <img  th:src="@{${cell1_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-2" name="currentCell" value=cell1_2>
+                <img th:src="@{${cell1_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-3" name="currentCell" value=cell1_3>
+                <img th:src="@{${cell1_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-4" name="currentCell" value=cell1_4>
+                <img th:src="@{${cell1_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-5" name="currentCell" value=cell1_5>
+                <img th:src="@{${cell1_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-6" name="currentCell" value=cell1_6>
+                <img th:src="@{${cell1_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-7" name="currentCell" value=cell1_7>
+                <img th:src="@{${cell1_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-8" name="currentCell" value=cell1_8>
+                <img th:src="@{${cell1_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-9" name="currentCell" value=cell1_9>
+                <img th:src="@{${cell1_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-10" name="currentCell" value="cell1_10">
+                <img th:src="@{${cell1_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-11" name="currentCell" value="cell1_11">
+                <img th:src="@{${cell1_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-12" name="currentCell" value="cell1_12">
+                <img th:src="@{${cell1_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-13" name="currentCell" value="cell1_13">
+                <img th:src="@{${cell1_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-14" name="currentCell" value="cell1_14">
+                <img th:src="@{${cell1_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-15" name="currentCell" value="cell1_15">
+                <img th:src="@{${cell1_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-16" name="currentCell" value="cell1_16">
+                <img th:src="@{${cell1_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-17" name="currentCell" value="cell1_17">
+                <img th:src="@{${cell1_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-18" name="currentCell" value="cell1_18">
+                <img th:src="@{${cell1_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-19" name="currentCell" value="cell1_19">
+                <img th:src="@{${cell1_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-20" name="currentCell" value="cell1_20">
+                <img th:src="@{${cell1_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-21" name="currentCell" value="cell1_21">
+                <img th:src="@{${cell1_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-22" name="currentCell" value="cell1_22">
+                <img th:src="@{${cell1_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="1-23" name="currentCell" value="cell1_23">
+                <img th:src="@{${cell1_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="1-24" name="currentCell" value="cell1_24">
+                <img th:src="@{${cell1_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+
+        </div>
+        <!-- ROW 2 -->
+        <div class="row">
+            <button class="cell white" data-position="2-1" name="currentCell" value="cell2_1">
+                <img th:src="@{${cell2_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-2" name="currentCell" value="cell2_2">
+                <img th:src="@{${cell2_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-3" name="currentCell" value="cell2_3">
+                <img th:src="@{${cell2_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-4" name="currentCell" value="cell2_4">
+                <img th:src="@{${cell2_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-5" name="currentCell" value="cell2_5">
+                <img th:src="@{${cell2_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-6" name="currentCell" value="cell2_6">
+                <img th:src="@{${cell2_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-7" name="currentCell" value="cell2_7">
+                <img th:src="@{${cell2_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-8" name="currentCell" value="cell2_8">
+                <img th:src="@{${cell2_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-9" name="currentCell" value="cell2_9">
+                <img th:src="@{${cell2_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-10" name="currentCell" value="cell2_10">
+                <img th:src="@{${cell2_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-11" name="currentCell" value="cell2_11">
+                <img th:src="@{${cell2_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-12" name="currentCell" value="cell2_12">
+                <img th:src="@{${cell2_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-13" name="currentCell" value="cell2_13">
+                <img th:src="@{${cell2_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-14" name="currentCell" value="cell2_14">
+                <img th:src="@{${cell2_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-15" name="currentCell" value="cell2_15">
+                <img th:src="@{${cell2_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-16" name="currentCell" value="cell2_16">
+                <img th:src="@{${cell2_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-17" name="currentCell" value="cell2_17">
+                <img th:src="@{${cell2_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-18" name="currentCell" value="cell2_18">
+                <img th:src="@{${cell2_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-19" name="currentCell" value="cell2_19">
+                <img th:src="@{${cell2_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-20" name="currentCell" value="cell2_20">
+                <img th:src="@{${cell2_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-21" name="currentCell" value="cell2_21">
+                <img th:src="@{${cell2_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-22" name="currentCell" value="cell2_22">
+                <img th:src="@{${cell2_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="2-23" name="currentCell" value="cell2_23">
+                <img th:src="@{${cell2_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="2-24" name="currentCell" value="cell2_24">
+                <img th:src="@{${cell2_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+        <!-- ROW 3 -->
+        <div class="row">
+            <button class="cell black" data-position="3-1" name="currentCell" value="cell3_1">
+                <img th:src="@{${cell3_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-2" name="currentCell" value="cell3_2">
+                <img th:src="@{${cell3_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-3" name="currentCell" value="cell3_3">
+                <img th:src="@{${cell3_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-4" name="currentCell" value="cell3_4">
+                <img th:src="@{${cell3_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-5" name="currentCell" value="cell3_5">
+                <img th:src="@{${cell3_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-6" name="currentCell" value="cell3_6">
+                <img th:src="@{${cell3_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-7" name="currentCell" value="cell3_7">
+                <img th:src="@{${cell3_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-8" name="currentCell" value="cell3_8">
+                <img th:src="@{${cell3_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-9" name="currentCell" value="cell3_9">
+                <img th:src="@{${cell3_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-10" name="currentCell" value="cell3_10">
+                <img th:src="@{${cell3_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-11" name="currentCell" value="cell3_11">
+                <img th:src="@{${cell3_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-12" name="currentCell" value="cell3_12">
+                <img th:src="@{${cell3_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-13" name="currentCell" value="cell3_13">
+                <img th:src="@{${cell3_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-14" name="currentCell" value="cell3_14">
+                <img th:src="@{${cell3_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-15" name="currentCell" value="cell3_15">
+                <img th:src="@{${cell3_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-16" name="currentCell" value="cell3_16">
+                <img th:src="@{${cell3_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-17" name="currentCell" value="cell3_17">
+                <img th:src="@{${cell3_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-18" name="currentCell" value="cell3_18">
+                <img th:src="@{${cell3_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-19" name="currentCell" value="cell3_19">
+                <img th:src="@{${cell3_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-20" name="currentCell" value="cell3_20">
+                <img th:src="@{${cell3_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-21" name="currentCell" value="cell3_21">
+                <img th:src="@{${cell3_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-22" name="currentCell" value="cell3_22">
+                <img th:src="@{${cell3_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="3-23" name="currentCell" value="cell3_23">
+                <img th:src="@{${cell3_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="3-24" name="currentCell" value="cell3_24">
+                <img th:src="@{${cell3_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+        <!-- ROW 4 -->
+        <div class="row">
+            <button class="cell white" data-position="4-1" name="currentCell" value="cell4_1">
+                <img th:src="@{${cell4_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-2" name="currentCell" value="cell4_2">
+                <img th:src="@{${cell4_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-3" name="currentCell" value="cell4_3">
+                <img th:src="@{${cell4_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-4" name="currentCell" value="cell4_4">
+                <img th:src="@{${cell4_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-5" name="currentCell" value="cell4_5">
+                <img th:src="@{${cell4_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-6" name="currentCell" value="cell4_6">
+                <img th:src="@{${cell4_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-7" name="currentCell" value="cell4_7">
+                <img th:src="@{${cell4_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-8" name="currentCell" value="cell4_8">
+                <img th:src="@{${cell4_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-9" name="currentCell" value="cell4_9">
+                <img th:src="@{${cell4_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-10" name="currentCell" value="cell4_10">
+                <img th:src="@{${cell4_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-11" name="currentCell" value="cell4_11">
+                <img th:src="@{${cell4_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-12" name="currentCell" value="cell4_12">
+                <img th:src="@{${cell4_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-13" name="currentCell" value="cell4_13">
+                <img th:src="@{${cell4_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-14" name="currentCell" value="cell4_14">
+                <img th:src="@{${cell4_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-15" name="currentCell" value="cell4_15">
+                <img th:src="@{${cell4_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-16" name="currentCell" value="cell4_16">
+                <img th:src="@{${cell4_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-17" name="currentCell" value="cell4_17">
+                <img th:src="@{${cell4_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-18" name="currentCell" value="cell4_18">
+                <img th:src="@{${cell4_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-19" name="currentCell" value="cell4_19">
+                <img th:src="@{${cell4_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-20" name="currentCell" value="cell4_20">
+                <img th:src="@{${cell4_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-21" name="currentCell" value="cell4_21">
+                <img th:src="@{${cell4_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-22" name="currentCell" value="cell4_22">
+                <img th:src="@{${cell4_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="4-23" name="currentCell" value="cell4_23">
+                <img th:src="@{${cell4_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="4-24" name="currentCell" value="cell4_24">
+                <img th:src="@{${cell4_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+        <!-- ROW 5 -->
+        <div class="row">
+            <button class="cell black" data-position="5-1" name="currentCell" value="cell5_1">
+                <img th:src="@{${cell5_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-2" name="currentCell" value="cell5_2">
+                <img th:src="@{${cell5_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-3" name="currentCell" value="cell5_3">
+                <img th:src="@{${cell5_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-4" name="currentCell" value="cell5_4">
+                <img th:src="@{${cell5_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-5" name="currentCell" value="cell5_5">
+                <img th:src="@{${cell5_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-6" name="currentCell" value="cell5_6">
+                <img th:src="@{${cell5_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-7" name="currentCell" value="cell5_7">
+                <img th:src="@{${cell5_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-8" name="currentCell" value="cell5_8">
+                <img th:src="@{${cell5_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-9" name="currentCell" value="cell5_9">
+                <img th:src="@{${cell5_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-10" name="currentCell" value="cell5_10">
+                <img th:src="@{${cell5_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-11" name="currentCell" value="cell5_11">
+                <img th:src="@{${cell5_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-12" name="currentCell" value="cell5_12">
+                <img th:src="@{${cell5_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-13" name="currentCell" value="cell5_13">
+                <img th:src="@{${cell5_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-14" name="currentCell" value="cell5_14">
+                <img th:src="@{${cell5_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-15" name="currentCell" value="cell5_15">
+                <img th:src="@{${cell5_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-16" name="currentCell" value="cell5_16">
+                <img th:src="@{${cell5_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-17" name="currentCell" value="cell5_17">
+                <img th:src="@{${cell5_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-18" name="currentCell" value="cell5_18">
+                <img th:src="@{${cell5_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-19" name="currentCell" value="cell5_19">
+                <img th:src="@{${cell5_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-20" name="currentCell" value="cell5_20">
+                <img th:src="@{${cell5_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-21" name="currentCell" value="cell5_21">
+                <img th:src="@{${cell5_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-22" name="currentCell" value="cell5_22">
+                <img th:src="@{${cell5_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="5-23" name="currentCell" value="cell5_23">
+                <img th:src="@{${cell5_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="5-24" name="currentCell" value="cell5_24">
+                <img th:src="@{${cell5_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+        <!-- ROW 6 -->
+        <div class="row">
+            <button class="cell white" data-position="6-1" name="currentCell" value="cell6_1">
+                <img th:src="@{${cell6_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-2" name="currentCell" value="cell6_2">
+                <img th:src="@{${cell6_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-3" name="currentCell" value="cell6_3">
+                <img th:src="@{${cell6_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-4" name="currentCell" value="cell6_4">
+                <img th:src="@{${cell6_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-5" name="currentCell" value="cell6_5">
+                <img th:src="@{${cell6_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-6" name="currentCell" value="cell6_6">
+                <img th:src="@{${cell6_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-7" name="currentCell" value="cell6_7">
+                <img th:src="@{${cell6_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-8" name="currentCell" value="cell6_8">
+                <img th:src="@{${cell6_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-9" name="currentCell" value="cell6_9">
+                <img th:src="@{${cell6_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-10" name="currentCell" value="cell6_10">
+                <img th:src="@{${cell6_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-11" name="currentCell" value="cell6_11">
+                <img th:src="@{${cell6_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-12" name="currentCell" value="cell6_12">
+                <img th:src="@{${cell6_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-13" name="currentCell" value="cell6_13">
+                <img th:src="@{${cell6_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-14" name="currentCell" value="cell6_14">
+                <img th:src="@{${cell6_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-15" name="currentCell" value="cell6_15">
+                <img th:src="@{${cell6_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-16" name="currentCell" value="cell6_16">
+                <img th:src="@{${cell6_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-17" name="currentCell" value="cell6_17">
+                <img th:src="@{${cell6_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-18" name="currentCell" value="cell6_18">
+                <img th:src="@{${cell6_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-19" name="currentCell" value="cell6_19">
+                <img th:src="@{${cell6_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-20" name="currentCell" value="cell6_20">
+                <img th:src="@{${cell6_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-21" name="currentCell" value="cell6_21">
+                <img th:src="@{${cell6_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-22" name="currentCell" value="cell6_22">
+                <img th:src="@{${cell6_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="6-23" name="currentCell" value="cell6_23">
+                <img th:src="@{${cell6_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="6-24" name="currentCell" value="cell6_24">
+                <img th:src="@{${cell6_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+        <!-- ROW 7 -->
+        <div class="row">
+            <button class="cell black" data-position="7-1" name="currentCell" value="cell7_1">
+                <img th:src="@{${cell7_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-2" name="currentCell" value="cell7_2">
+                <img th:src="@{${cell7_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-3" name="currentCell" value="cell7_3">
+                <img th:src="@{${cell7_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-4" name="currentCell" value="cell7_4">
+                <img th:src="@{${cell7_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-5" name="currentCell" value="cell7_5">
+                <img th:src="@{${cell7_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-6" name="currentCell" value="cell7_6">
+                <img th:src="@{${cell7_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-7" name="currentCell" value="cell7_7">
+                <img th:src="@{${cell7_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-8" name="currentCell" value="cell7_8">
+                <img th:src="@{${cell7_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-9" name="currentCell" value="cell7_9">
+                <img th:src="@{${cell7_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-10" name="currentCell" value="cell7_10">
+                <img th:src="@{${cell7_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-11" name="currentCell" value="cell7_11">
+                <img th:src="@{${cell7_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-12" name="currentCell" value="cell7_12">
+                <img th:src="@{${cell7_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-13" name="currentCell" value="cell7_13">
+                <img th:src="@{${cell7_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-14" name="currentCell" value="cell7_14">
+                <img th:src="@{${cell7_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-15" name="currentCell" value="cell7_15">
+                <img th:src="@{${cell7_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-16" name="currentCell" value="cell7_16">
+                <img th:src="@{${cell7_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-17" name="currentCell" value="cell7_17">
+                <img th:src="@{${cell7_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-18" name="currentCell" value="cell7_18">
+                <img th:src="@{${cell7_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-19" name="currentCell" value="cell7_19">
+                <img th:src="@{${cell7_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-20" name="currentCell" value="cell7_20">
+                <img th:src="@{${cell7_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-21" name="currentCell" value="cell7_21">
+                <img th:src="@{${cell7_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-22" name="currentCell" value="cell7_22">
+                <img th:src="@{${cell7_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="7-23" name="currentCell" value="cell7_23">
+                <img th:src="@{${cell7_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="7-24" name="currentCell" value="cell7_24">
+                <img th:src="@{${cell7_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+        <!-- ROW 8 -->
+        <div class="row">
+            <button class="cell white" data-position="8-1" name="currentCell" value="cell8_1">
+                <img th:src="@{${cell8_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-2" name="currentCell" value="cell8_2">
+                <img th:src="@{${cell8_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-3" name="currentCell" value="cell8_3">
+                <img th:src="@{${cell8_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-4" name="currentCell" value="cell8_4">
+                <img th:src="@{${cell8_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-5" name="currentCell" value="cell8_5">
+                <img th:src="@{${cell8_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-6" name="currentCell" value="cell8_6">
+                <img th:src="@{${cell8_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-7" name="currentCell" value="cell8_7">
+                <img th:src="@{${cell8_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-8" name="currentCell" value="cell8_8">
+                <img th:src="@{${cell8_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-9" name="currentCell" value="cell8_9">
+                <img th:src="@{${cell8_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-10" name="currentCell" value="cell8_10">
+                <img th:src="@{${cell8_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-11" name="currentCell" value="cell8_11">
+                <img th:src="@{${cell8_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-12" name="currentCell" value="cell8_12">
+                <img th:src="@{${cell8_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-13" name="currentCell" value="cell8_13">
+                <img th:src="@{${cell8_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-14" name="currentCell" value="cell8_14">
+                <img th:src="@{${cell8_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-15" name="currentCell" value="cell8_15">
+                <img th:src="@{${cell8_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-16" name="currentCell" value="cell8_16">
+                <img th:src="@{${cell8_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-17" name="currentCell" value="cell8_17">
+                <img th:src="@{${cell8_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-18" name="currentCell" value="cell8_18">
+                <img th:src="@{${cell8_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-19" name="currentCell" value="cell8_19">
+                <img th:src="@{${cell8_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-20" name="currentCell" value="cell8_20">
+                <img th:src="@{${cell8_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-21" name="currentCell" value="cell8_21">
+                <img th:src="@{${cell8_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-22" name="currentCell" value="cell8_22">
+                <img th:src="@{${cell8_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="8-23" name="currentCell" value="cell8_23">
+                <img th:src="@{${cell8_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="8-24" name="currentCell" value="cell8_24">
+                <img th:src="@{${cell8_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+        <!-- ROW 9 -->
+        <div class="row">
+            <button class="cell black" data-position="9-1" name="currentCell" value="cell9_1">
+                <img th:src="@{${cell9_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-2" name="currentCell" value="cell9_2">
+                <img th:src="@{${cell9_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-3" name="currentCell" value="cell9_3">
+                <img th:src="@{${cell9_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-4" name="currentCell" value="cell9_4">
+                <img th:src="@{${cell9_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-5" name="currentCell" value="cell9_5">
+                <img th:src="@{${cell9_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-6" name="currentCell" value="cell9_6">
+                <img th:src="@{${cell9_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-7" name="currentCell" value="cell9_7">
+                <img th:src="@{${cell9_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-8" name="currentCell" value="cell9_8">
+                <img th:src="@{${cell9_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-9" name="currentCell" value="cell9_9">
+                <img th:src="@{${cell9_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-10" name="currentCell" value="cell9_10">
+                <img th:src="@{${cell9_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-11" name="currentCell" value="cell9_11">
+                <img th:src="@{${cell9_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-12" name="currentCell" value="cell9_12">
+                <img th:src="@{${cell9_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-13" name="currentCell" value="cell9_13">
+                <img th:src="@{${cell9_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-14" name="currentCell" value="cell9_14">
+                <img th:src="@{${cell9_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-15" name="currentCell" value="cell9_15">
+                <img th:src="@{${cell9_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-16" name="currentCell" value="cell9_16">
+                <img th:src="@{${cell9_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-17" name="currentCell" value="cell9_17">
+                <img th:src="@{${cell9_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-18" name="currentCell" value="cell9_18">
+                <img th:src="@{${cell9_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-19" name="currentCell" value="cell9_19">
+                <img th:src="@{${cell9_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-20" name="currentCell" value="cell9_20">
+                <img th:src="@{${cell9_20_img}}" alt="Button Image" style="width: 50px; height: 78px;">
+            </button>
+            <button class="cell black" data-position="9-21" name="currentCell" value="cell9_21">
+                <img th:src="@{${cell9_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-22" name="currentCell" value="cell9_22">
+                <img th:src="@{${cell9_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="9-23" name="currentCell" value="cell9_23">
+                <img th:src="@{${cell9_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="9-24" name="currentCell" value="cell9_24">
+                <img th:src="@{${cell9_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+        <!-- ROW 10 -->
+        <div class="row">
+            <button class="cell white" data-position="10-1" name="currentCell" value="cell10_1">
+                <img th:src="@{${cell10_1_img}}" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-2" name="currentCell" value="cell10_2">
+                <img th:src="@{${cell10_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-3" name="currentCell" value="cell10_3">
+                <img th:src="@{${cell10_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-4" name="currentCell" value="cell10_4">
+                <img th:src="@{${cell10_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-5" name="currentCell" value="cell10_5">
+                <img th:src="@{${cell10_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-6" name="currentCell" value="cell10_6">
+                <img th:src="@{${cell10_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-7" name="currentCell" value="cell10_7">
+                <img th:src="@{${cell10_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-8" name="currentCell" value="cell10_8">
+                <img th:src="@{${cell10_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-9" name="currentCell" value="cell10_9">
+                <img th:src="@{${cell10_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-10" name="currentCell" value="cell10_10">
+                <img th:src="@{${cell10_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-11" name="currentCell" value="cell10_11">
+                <img th:src="@{${cell10_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-12" name="currentCell" value="cell10_12">
+                <img th:src="@{${cell10_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-13" name="currentCell" value="cell10_13">
+                <img th:src="@{${cell10_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-14" name="currentCell" value="cell10_14">
+                <img th:src="@{${cell10_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-15" name="currentCell" value="cell10_15">
+                <img th:src="@{${cell10_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-16" name="currentCell" value="cell10_16">
+                <img th:src="@{${cell10_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-17" name="currentCell" value="cell10_17">
+                <img th:src="@{${cell10_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-18" name="currentCell" value="cell10_18">
+                <img th:src="@{${cell10_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-19" name="currentCell" value="cell10_19">
+                <img th:src="@{${cell10_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-20" name="currentCell" value="cell10_20">
+                <img th:src="@{${cell10_20_img}}" alt="Button Image" style="width: 50px; height: 75px; margin-top: -18px;">
+            </button>
+            <button class="cell white" data-position="10-21" name="currentCell" value="cell10_21">
+                <img th:src="@{${cell10_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-22" name="currentCell" value="cell10_22">
+                <img th:src="@{${cell10_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell white" data-position="10-23" name="currentCell" value="cell10_23">
+                <img th:src="@{${cell10_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+            <button class="cell black" data-position="10-24" name="currentCell" value="cell10_24">
+                <img th:src="@{${cell10_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
+            </button>
+        </div>
+
+
+        <div class="button-container top-right">
+            <button type="submit" class="corner-button" style="width: 100px;border-radius: 50%; height: 100px;" name="currentCell" value="button1">
+                <img src="images/catapulta.png" style="width: 110px; height: 110px;  margin-left: -25px; margin-top: -17px; object-fit: cover;" alt="Catapulta">
+            </button>
+
+        </div>
+        <div class="button-container bottom-left">
+            <button type="submit" class="corner-button" name="currentCell" value="clear" style="width: 80px; height: 70px;">
+            <img src="images/mortar.png" style="width: 110px; height: 110px;  margin-left: -34px; margin-top: -34px; object-fit: cover;" alt="morta">
+            </button>
+        </div>
+
     </form>
 </div>
-    </div>
+</div>
 </div>
 </body>
 </html>

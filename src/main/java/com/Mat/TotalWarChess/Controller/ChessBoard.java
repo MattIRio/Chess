@@ -99,7 +99,7 @@ public class ChessBoard {
 
 
 // BOTH VALUES TO NULL
-        if (fromCell.equals("cell1_24")){
+        if (fromCell.equals("clear")){
             firstCellSaver = "";
             secondCellSaver = "";
             session.removeAttribute("firstCellSaver");
