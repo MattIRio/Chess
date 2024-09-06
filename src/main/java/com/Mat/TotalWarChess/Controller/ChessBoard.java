@@ -25,9 +25,6 @@ public class ChessBoard {
             session.setAttribute("chessMoves", chessMoves);
         }
 
-//        for (FigureImage figureImage : chessMoves.imagesArray) {
-//            model.addAttribute(figureImage.getImageName(), figureImage.getPath());
-//        }
 
         ImagesSetter imagesSetter = new ImagesSetter();
         imagesSetter.imagesSetter(model, session);
@@ -37,10 +34,8 @@ public class ChessBoard {
 
         model.addAttribute("username", username);
         model.addAttribute("secondUsername", secondUsername);
+        model.addAttribute("playerss_turn", session.getAttribute("username"));
 
-
-
-//        model.addAttribute("paw_w_img", "images/pawn-w.png");
         return "ChessBoard";
     }
 
@@ -49,78 +44,113 @@ public class ChessBoard {
                             @RequestParam(value = "secondCurrentCell", required = false) String toCell,
                             HttpSession session, Model model) {
 
-        ChessMoves chessMoves = (ChessMoves) session.getAttribute("chessMoves");
-        if (chessMoves == null) {
-            chessMoves = new ChessMoves();
-            session.setAttribute("chessMoves", chessMoves);
+
+        Integer playerMovePoints = (Integer) session.getAttribute("playerMovePoints");
+        Integer playersTurn = (Integer) session.getAttribute("playersTurn");
+
+        // Если значения не установлены, инициализируем их
+        if (playerMovePoints == null) {
+            playerMovePoints = 1;
+        }
+        if (playersTurn == null) {
+            playersTurn = 1;
         }
 
 
-        String username = (String) session.getAttribute("username");
-        String secondUsername = (String) session.getAttribute("secondUsername");
-
-        model.addAttribute("username", username);
-        model.addAttribute("secondUsername", secondUsername);
-
-//        ImagesSetter imagesSetter = new ImagesSetter();
-//        imagesSetter.imagesSetter(model,session);
-
-        String firstCellSaver = (String) session.getAttribute("firstCellSaver");
-        String secondCellSaver = (String) session.getAttribute("secondCellSaver");
-
-
-        if (firstCellSaver == null) {
-            firstCellSaver = "";
-        }
-        if (secondCellSaver == null) {
-            secondCellSaver = "";
-        }
-
-
-
-        if (fromCell != null) {
-            if (firstCellSaver.isEmpty()) {
-                firstCellSaver = fromCell;
-                session.setAttribute("firstCellSaver", firstCellSaver);
-            } else if (secondCellSaver.isEmpty()) {
-                secondCellSaver = fromCell;
-                session.setAttribute("secondCellSaver", secondCellSaver);
-            } else if(!firstCellSaver.isEmpty() && !secondCellSaver.isEmpty()){
-                chessMoves.swapTiles(firstCellSaver, secondCellSaver);
-                firstCellSaver = "";
-                secondCellSaver = "";
-                session.setAttribute("secondCellSaver", secondCellSaver);
-                session.setAttribute("firstCellSaver", firstCellSaver);
+            ChessMoves chessMoves = (ChessMoves) session.getAttribute("chessMoves");
+            if (chessMoves == null) {
+                chessMoves = new ChessMoves();
+                session.setAttribute("chessMoves", chessMoves);
             }
-        }
+
+
+            String username = (String) session.getAttribute("username");
+            String secondUsername = (String) session.getAttribute("secondUsername");
+
+            model.addAttribute("username", username);
+            model.addAttribute("secondUsername", secondUsername);
+
+
+            String firstCellSaver = (String) session.getAttribute("firstCellSaver");
+            String secondCellSaver = (String) session.getAttribute("secondCellSaver");
+
+
+            //GAME LOGICK
+
+
+            if (firstCellSaver == null) {
+                firstCellSaver = "";
+            }
+            if (secondCellSaver == null) {
+                secondCellSaver = "";
+            }
+
+
+            if(playersTurn == 1){
+                model.addAttribute("playerss_turn", session.getAttribute("username"));
+            } else if (playersTurn == 2){
+                model.addAttribute("playerss_turn", session.getAttribute("secondUsername"));
+            }
 
 
 
+
+            if (playerMovePoints == 2 && playersTurn == 1){
+                playerMovePoints = 0;
+                playersTurn = 2;
+
+            } else if(playerMovePoints == 2 && playersTurn == 2){
+                playerMovePoints = 0;
+                playersTurn = 1;
+
+            }
+
+        session.setAttribute("playerMovePoints", playerMovePoints);
+        session.setAttribute("playersTurn", playersTurn);
+
+            if (fromCell != null) {
+                if (firstCellSaver.isEmpty()) {
+                    firstCellSaver = fromCell;
+                    chessMoves.hightlightTile(firstCellSaver);
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                } else if (secondCellSaver.isEmpty()) {
+                    secondCellSaver = fromCell;
+                    chessMoves.unHightlightTile();
+                    session.setAttribute("secondCellSaver", secondCellSaver);
+                }
+                if (!firstCellSaver.isEmpty() && !secondCellSaver.isEmpty()) {
+                    chessMoves.swapTiles(firstCellSaver, secondCellSaver);
+                    firstCellSaver = "";
+                    secondCellSaver = "";
+                    session.setAttribute("secondCellSaver", secondCellSaver);
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                    playerMovePoints++;
+                    session.setAttribute("playerMovePoints", playerMovePoints);
+                }
+            }
+
+            chessMoves.updateModelWithHighlightedTiles(model);
 
 
 // BOTH VALUES TO NULL
-        if (fromCell.equals("clear")){
-            firstCellSaver = "";
-            secondCellSaver = "";
-            session.removeAttribute("firstCellSaver");
-            session.removeAttribute("secondCellSaver");
-        }
+            if (fromCell.equals("clear")) {
+                firstCellSaver = "";
+                secondCellSaver = "";
+                session.removeAttribute("firstCellSaver");
+                session.removeAttribute("secondCellSaver");
+            }
 
 
-        System.out.println(fromCell);
-        System.out.println("1st " + firstCellSaver);
-        System.out.println("2nd " + secondCellSaver);
-        System.out.println("");
+            System.out.println(fromCell);
+            System.out.println("1st " + firstCellSaver);
+            System.out.println("2nd " + secondCellSaver);
+            System.out.println("move points " + playerMovePoints);
+            System.out.println("players turn " + playersTurn);
+            System.out.println("");
 
-
-        for (FigureImage figureImage : chessMoves.imagesArray) {
-            model.addAttribute(figureImage.getImageName(), figureImage.getPath());
-        }
-
-
-
-
-
+            for (FigureImage figureImage : chessMoves.imagesArray) {
+                model.addAttribute(figureImage.getImageName(), figureImage.getPath());
+            }
 
 
             return "ChessBoard";
