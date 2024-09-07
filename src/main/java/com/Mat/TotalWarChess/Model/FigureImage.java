@@ -4,12 +4,12 @@ public class FigureImage {
     String tileName;
     String imageName;
     String path;
-    String backgroundColor;
+    int tilenumber;
     String nameForColor;
     String borders;
 
-    public String getBackgroundColor() {
-        return backgroundColor;
+    public int getTilenumber() {
+        return tilenumber;
     }
 
     public String getNameForColor() {
@@ -20,8 +20,8 @@ public class FigureImage {
         this.nameForColor = nameForColor;
     }
 
-    public void setBackgroundColor(String backgroundColor) {
-        this.backgroundColor = backgroundColor;
+    public void setTilenumber(int tilenumber) {
+        this.tilenumber = tilenumber;
     }
 
     public String getBorders() {
@@ -57,12 +57,12 @@ public class FigureImage {
     }
 
 
-    public FigureImage(String tileName, String imageName, String path, String borders, String backgroundColor, String nameForColor) {
+    public FigureImage(String tileName, String imageName, String path, String borders, int tilenumber, String nameForColor) {
         this.imageName = imageName;
         this.path = path;
         this.tileName = tileName;
         this.borders = borders;
-        this.backgroundColor = backgroundColor;
+        this.tilenumber = tilenumber;
         this.nameForColor = nameForColor;
     }
 

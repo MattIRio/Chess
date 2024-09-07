@@ -28,7 +28,7 @@
   background-color: #deab19;
 }
 
-/* Контейнер для кнопок */
+
 .button-container {
   position: absolute;
   display: flex;
@@ -36,7 +36,7 @@
   gap: 10px; /* Расстояние между кнопками */
 }
 
-/* Переменные для позиционирования кнопок */
+
 :root {
   --top-right-top: 110px;
   --top-right-right: 70px;
@@ -89,22 +89,37 @@ border: 1px solid transparent; /* Измените цвет границы на 
   right: 0;
   /* Можно добавить дополнительные стили для этого положения */
 }
-
+.centered-text {
+    text-align: center;
+}
 .vertical-table.bottom-left {
   bottom: 0;
   left: 0;
   /* Можно добавить дополнительные стили для этого положения */
 }
+#image-container {
+    display: inline-block; /* Makes the image inline with the text */
+    vertical-align: middle; /* Aligns the image to the middle of the text */
+    margin-left: 10px; /* Adjust margin to add spacing between text and image */
+}
 
+#positioned-image {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Maintain aspect ratio */
+}
     </style>
 </head>
 <body>
 <div class="label" ><span th:text="${username}"></span></div>
 <div class="another-label"><span th:text="${secondUsername}"></span></div>
-<p class="centered-text">TOTAL WAR CHESS<br>
+<div class="centered-text">TOTAL WAR CHESS<br>
     <br>
-    <span th:text="${playerss_turn}"></span>'s turn<br>
-    <br></p>
+    <span th:text="${playerss_turn}"></span>'s turn
+<div id="image-container">
+    <img id="positioned-image" th:src="@{${players_turn_image}}" alt="Chess Image">
+</div>
+</div>
+</p>
 
 <div class="vertical-table top-right">
     <div class="table-cell">Текст 1</div>
