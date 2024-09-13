@@ -54,7 +54,7 @@
 border: 1px solid transparent; /* Измените цвет границы на прозрачный */
     padding: 0; /* Убедитесь, что тело кнопки не имеет отступов */
     box-sizing:
-    transition: border-color 0.3s;
+    transition: bor der-color 0.3s;
             transition: border-width 0.3s ease; /* Плавное изменение ширины обводки */
             padding: 0; /* Убираем отступ в кнопках */
             margin: 0; /* Убираем отступы между кнопками */
@@ -91,6 +91,11 @@ border: 1px solid transparent; /* Измените цвет границы на 
 }
 .centered-text {
     text-align: center;
+}
+#chessboard-container {
+    background-color: #a7f28d; /* Замените на нужный вам цвет */
+    padding: 0px; /* Добавьте отступ, если нужно */
+    border: 2px solid black; /* При желании добавьте границы */
 }
 .vertical-table.bottom-left {
   bottom: 0;
@@ -136,759 +141,759 @@ border: 1px solid transparent; /* Измените цвет границы на 
     <!-- Добавьте больше текста по мере необходимости -->
 </div>
 
-<div class="chessboard">
+<div class="chessboard" id="chessboard-container">
     <form action="/chessboard" method="POST">
         <input type="hidden" name="fromCell" value="">
         <input type="hidden" name="toCell" value="">
 
         <!-- ROW 1 -->
-        <div class="row">
-            <button th:style="'border: ' + ${cell1_1_color} + ' !important;'" class="cell black" data-position="1-1" name="currentCell" value="cell1_1">
+         <div class="row">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell1_1_color} + ';'" class="cell black" data-position="1-1" name="currentCell" value="cell1_1">
                 <img th:src="@{${cell1_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell1_2_color} + ' !important;'" class="cell white" data-position="1-2" name="currentCell" value=cell1_2>
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell1_2_color} + ';'" class="cell white" data-position="1-2" name="currentCell" value=cell1_2>
                 <img th:src="@{${cell1_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_3_color} + ' !important;'" class="cell black" data-position="1-3" name="currentCell" value=cell1_3>
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_3_color} + ';'" class="cell black" data-position="1-3" name="currentCell" value=cell1_3>
                 <img th:src="@{${cell1_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_4_color} + ' !important;'" class="cell white" data-position="1-4" name="currentCell" value=cell1_4>
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_4_color} + ';'" class="cell white" data-position="1-4" name="currentCell" value=cell1_4>
                 <img th:src="@{${cell1_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_5_color} + ' !important;'" class="cell black" data-position="1-5" name="currentCell" value=cell1_5>
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_5_color} + ';'" class="cell black" data-position="1-5" name="currentCell" value=cell1_5>
                 <img th:src="@{${cell1_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_6_color} + ' !important;'" class="cell white" data-position="1-6" name="currentCell" value=cell1_6>
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_6_color} + ';'" class="cell white" data-position="1-6" name="currentCell" value=cell1_6>
                 <img th:src="@{${cell1_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_7_color} + ' !important;'" class="cell black" data-position="1-7" name="currentCell" value=cell1_7>
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_7_color} + ';'" class="cell black" data-position="1-7" name="currentCell" value=cell1_7>
                 <img th:src="@{${cell1_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_8_color} + ' !important;'" class="cell white" data-position="1-8" name="currentCell" value=cell1_8>
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_8_color} + ';'" class="cell white" data-position="1-8" name="currentCell" value=cell1_8>
                 <img th:src="@{${cell1_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_9_color} + ' !important;'" class="cell black" data-position="1-9" name="currentCell" value=cell1_9>
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_9_color} + ';'" class="cell black" data-position="1-9" name="currentCell" value=cell1_9>
                 <img th:src="@{${cell1_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_10_color} + ' !important;'" class="cell white" data-position="1-10" name="currentCell" value="cell1_10">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_10_color} + ';'" class="cell white" data-position="1-10" name="currentCell" value="cell1_10">
                 <img th:src="@{${cell1_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_11_color} + ' !important;'" class="cell black" data-position="1-11" name="currentCell" value="cell1_11">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_11_color} + ';'" class="cell black" data-position="1-11" name="currentCell" value="cell1_11">
                 <img th:src="@{${cell1_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_12_color} + ' !important;'" class="cell white" data-position="1-12" name="currentCell" value="cell1_12">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_12_color} + ';'" class="cell white" data-position="1-12" name="currentCell" value="cell1_12">
                 <img th:src="@{${cell1_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_13_color} + ' !important;'" class="cell black" data-position="1-13" name="currentCell" value="cell1_13">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_13_color} + ';'" class="cell black" data-position="1-13" name="currentCell" value="cell1_13">
                 <img th:src="@{${cell1_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_14_color} + ' !important;'" class="cell white" data-position="1-14" name="currentCell" value="cell1_14">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_14_color} + ';'" class="cell white" data-position="1-14" name="currentCell" value="cell1_14">
                 <img th:src="@{${cell1_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_15_color} + ' !important;'" class="cell black" data-position="1-15" name="currentCell" value="cell1_15">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_15_color} + ';'" class="cell black" data-position="1-15" name="currentCell" value="cell1_15">
                 <img th:src="@{${cell1_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_16_color} + ' !important;'" class="cell white" data-position="1-16" name="currentCell" value="cell1_16">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_16_color} + ';'" class="cell white" data-position="1-16" name="currentCell" value="cell1_16">
                 <img th:src="@{${cell1_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_17_color} + ' !important;'" class="cell black" data-position="1-17" name="currentCell" value="cell1_17">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_17_color} + ';'" class="cell black" data-position="1-17" name="currentCell" value="cell1_17">
                 <img th:src="@{${cell1_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_18_color} + ' !important;'" class="cell white" data-position="1-18" name="currentCell" value="cell1_18">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_18_color} + ';'" class="cell white" data-position="1-18" name="currentCell" value="cell1_18">
                 <img th:src="@{${cell1_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_19_color} + ' !important;'" class="cell black" data-position="1-19" name="currentCell" value="cell1_19">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_19_color} + ';'" class="cell black" data-position="1-19" name="currentCell" value="cell1_19">
                 <img th:src="@{${cell1_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_20_color} + ' !important;'" class="cell white" data-position="1-20" name="currentCell" value="cell1_20">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_20_color} + ';'" class="cell white" data-position="1-20" name="currentCell" value="cell1_20">
                 <img th:src="@{${cell1_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_21_color} + ' !important;'" class="cell black" data-position="1-21" name="currentCell" value="cell1_21">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_21_color} + ';'" class="cell black" data-position="1-21" name="currentCell" value="cell1_21">
                 <img th:src="@{${cell1_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_22_color} + ' !important;'" class="cell white" data-position="1-22" name="currentCell" value="cell1_22">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_22_color} + ';'" class="cell white" data-position="1-22" name="currentCell" value="cell1_22">
                 <img th:src="@{${cell1_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_23_color} + ' !important;'" class="cell black" data-position="1-23" name="currentCell" value="cell1_23">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_23_color} + ';'" class="cell black" data-position="1-23" name="currentCell" value="cell1_23">
                 <img th:src="@{${cell1_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button  th:style="'border: ' + ${cell1_24_color} + ' !important;'" class="cell white" data-position="1-24" name="currentCell" value="cell1_24">
+            <button  th:style="'border: 1px solid black; border-radius: ' + ${cell1_24_color} + ';'" class="cell white" data-position="1-24" name="currentCell" value="cell1_24">
                 <img th:src="@{${cell1_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
 
         </div>
         <!-- ROW 2 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell2_1_color} + ' !important;'" class="cell white" data-position="2-1" name="currentCell" value="cell2_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_1_color} + ';'" class="cell white" data-position="2-1" name="currentCell" value="cell2_1">
                 <img th:src="@{${cell2_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_2_color} + ' !important;'" class="cell black" data-position="2-2" name="currentCell" value="cell2_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_2_color} + ';'" class="cell black" data-position="2-2" name="currentCell" value="cell2_2">
                 <img th:src="@{${cell2_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_3_color} + ' !important;'" class="cell white" data-position="2-3" name="currentCell" value="cell2_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_3_color} + ';'" class="cell white" data-position="2-3" name="currentCell" value="cell2_3">
                 <img th:src="@{${cell2_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_4_color} + ' !important;'" class="cell black" data-position="2-4" name="currentCell" value="cell2_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_4_color} + ';'" class="cell black" data-position="2-4" name="currentCell" value="cell2_4">
                 <img th:src="@{${cell2_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_5_color} + ' !important;'" class="cell white" data-position="2-5" name="currentCell" value="cell2_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_5_color} + ';'" class="cell white" data-position="2-5" name="currentCell" value="cell2_5">
                 <img th:src="@{${cell2_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_6_color} + ' !important;'" class="cell black" data-position="2-6" name="currentCell" value="cell2_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_6_color} + ';'" class="cell black" data-position="2-6" name="currentCell" value="cell2_6">
                 <img th:src="@{${cell2_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_7_color} + ' !important;'" class="cell white" data-position="2-7" name="currentCell" value="cell2_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_7_color} + ';'" class="cell white" data-position="2-7" name="currentCell" value="cell2_7">
                 <img th:src="@{${cell2_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_8_color} + ' !important;'" class="cell black" data-position="2-8" name="currentCell" value="cell2_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_8_color} + ';'" class="cell black" data-position="2-8" name="currentCell" value="cell2_8">
                 <img th:src="@{${cell2_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_9_color} + ' !important;'" class="cell white" data-position="2-9" name="currentCell" value="cell2_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_9_color} + ';'" class="cell white" data-position="2-9" name="currentCell" value="cell2_9">
                 <img th:src="@{${cell2_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_10_color} + ' !important;'" class="cell black" data-position="2-10" name="currentCell" value="cell2_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_10_color} + ';'" class="cell black" data-position="2-10" name="currentCell" value="cell2_10">
                 <img th:src="@{${cell2_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_11_color} + ' !important;'" class="cell white" data-position="2-11" name="currentCell" value="cell2_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_11_color} + ';'" class="cell white" data-position="2-11" name="currentCell" value="cell2_11">
                 <img th:src="@{${cell2_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_12_color} + ' !important;'" class="cell black" data-position="2-12" name="currentCell" value="cell2_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_12_color} + ';'" class="cell black" data-position="2-12" name="currentCell" value="cell2_12">
                 <img th:src="@{${cell2_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_13_color} + ' !important;'" class="cell white" data-position="2-13" name="currentCell" value="cell2_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_13_color} + ';'" class="cell white" data-position="2-13" name="currentCell" value="cell2_13">
                 <img th:src="@{${cell2_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_14_color} + ' !important;'" class="cell black" data-position="2-14" name="currentCell" value="cell2_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_14_color} + ';'" class="cell black" data-position="2-14" name="currentCell" value="cell2_14">
                 <img th:src="@{${cell2_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_15_color} + ' !important;'" class="cell white" data-position="2-15" name="currentCell" value="cell2_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_15_color} + ';'" class="cell white" data-position="2-15" name="currentCell" value="cell2_15">
                 <img th:src="@{${cell2_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_16_color} + ' !important;'" class="cell black" data-position="2-16" name="currentCell" value="cell2_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_16_color} + ';'" class="cell black" data-position="2-16" name="currentCell" value="cell2_16">
                 <img th:src="@{${cell2_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_17_color} + ' !important;'" class="cell white" data-position="2-17" name="currentCell" value="cell2_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_17_color} + ';'" class="cell white" data-position="2-17" name="currentCell" value="cell2_17">
                 <img th:src="@{${cell2_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_18_color} + ' !important;'" class="cell black" data-position="2-18" name="currentCell" value="cell2_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_18_color} + ';'" class="cell black" data-position="2-18" name="currentCell" value="cell2_18">
                 <img th:src="@{${cell2_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_19_color} + ' !important;'" class="cell white" data-position="2-19" name="currentCell" value="cell2_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_19_color} + ';'" class="cell white" data-position="2-19" name="currentCell" value="cell2_19">
                 <img th:src="@{${cell2_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_20_color} + ' !important;'" class="cell black" data-position="2-20" name="currentCell" value="cell2_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_20_color} + ';'" class="cell black" data-position="2-20" name="currentCell" value="cell2_20">
                 <img th:src="@{${cell2_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_21_color} + ' !important;'" class="cell white" data-position="2-21" name="currentCell" value="cell2_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_21_color} + ';'" class="cell white" data-position="2-21" name="currentCell" value="cell2_21">
                 <img th:src="@{${cell2_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_22_color} + ' !important;'" class="cell black" data-position="2-22" name="currentCell" value="cell2_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_22_color} + ';'" class="cell black" data-position="2-22" name="currentCell" value="cell2_22">
                 <img th:src="@{${cell2_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_23_color} + ' !important;'" class="cell white" data-position="2-23" name="currentCell" value="cell2_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_23_color} + ';'" class="cell white" data-position="2-23" name="currentCell" value="cell2_23">
                 <img th:src="@{${cell2_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell2_24_color} + ' !important;'" class="cell black" data-position="2-24" name="currentCell" value="cell2_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_24_color} + ';'" class="cell black" data-position="2-24" name="currentCell" value="cell2_24">
                 <img th:src="@{${cell2_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
         <!-- ROW 3 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell3_1_color} + ' !important;'" class="cell black" data-position="3-1" name="currentCell" value="cell3_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_1_color} + ';'" class="cell black" data-position="3-1" name="currentCell" value="cell3_1">
                 <img th:src="@{${cell3_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_2_color} + ' !important;'" class="cell white" data-position="3-2" name="currentCell" value="cell3_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_2_color} + ';'" class="cell white" data-position="3-2" name="currentCell" value="cell3_2">
                 <img th:src="@{${cell3_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_3_color} + ' !important;'" class="cell black" data-position="3-3" name="currentCell" value="cell3_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_3_color} + ';'" class="cell black" data-position="3-3" name="currentCell" value="cell3_3">
                 <img th:src="@{${cell3_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_4_color} + ' !important;'" class="cell white" data-position="3-4" name="currentCell" value="cell3_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_4_color} + ';'" class="cell white" data-position="3-4" name="currentCell" value="cell3_4">
                 <img th:src="@{${cell3_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_5_color} + ' !important;'" class="cell black" data-position="3-5" name="currentCell" value="cell3_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_5_color} + ';'" class="cell black" data-position="3-5" name="currentCell" value="cell3_5">
                 <img th:src="@{${cell3_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_6_color} + ' !important;'" class="cell white" data-position="3-6" name="currentCell" value="cell3_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_6_color} + ';'" class="cell white" data-position="3-6" name="currentCell" value="cell3_6">
                 <img th:src="@{${cell3_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_7_color} + ' !important;'" class="cell black" data-position="3-7" name="currentCell" value="cell3_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_7_color} + ';'" class="cell black" data-position="3-7" name="currentCell" value="cell3_7">
                 <img th:src="@{${cell3_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_8_color} + ' !important;'" class="cell white" data-position="3-8" name="currentCell" value="cell3_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_8_color} + ';'" class="cell white" data-position="3-8" name="currentCell" value="cell3_8">
                 <img th:src="@{${cell3_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_9_color} + ' !important;'" class="cell black" data-position="3-9" name="currentCell" value="cell3_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_9_color} + ';'" class="cell black" data-position="3-9" name="currentCell" value="cell3_9">
                 <img th:src="@{${cell3_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_10_color} + ' !important;'" class="cell white" data-position="3-10" name="currentCell" value="cell3_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_10_color} + ';'" class="cell white" data-position="3-10" name="currentCell" value="cell3_10">
                 <img th:src="@{${cell3_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_11_color} + ' !important;'" class="cell black" data-position="3-11" name="currentCell" value="cell3_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_11_color} + ';'" class="cell black" data-position="3-11" name="currentCell" value="cell3_11">
                 <img th:src="@{${cell3_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_12_color} + ' !important;'" class="cell white" data-position="3-12" name="currentCell" value="cell3_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_12_color} + ';'" class="cell white" data-position="3-12" name="currentCell" value="cell3_12">
                 <img th:src="@{${cell3_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_13_color} + ' !important;'" class="cell black" data-position="3-13" name="currentCell" value="cell3_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_13_color} + ';'" class="cell black" data-position="3-13" name="currentCell" value="cell3_13">
                 <img th:src="@{${cell3_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_14_color} + ' !important;'" class="cell white" data-position="3-14" name="currentCell" value="cell3_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_14_color} + ';'" class="cell white" data-position="3-14" name="currentCell" value="cell3_14">
                 <img th:src="@{${cell3_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_15_color} + ' !important;'" class="cell black" data-position="3-15" name="currentCell" value="cell3_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_15_color} + ';'" class="cell black" data-position="3-15" name="currentCell" value="cell3_15">
                 <img th:src="@{${cell3_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_16_color} + ' !important;'" class="cell white" data-position="3-16" name="currentCell" value="cell3_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_16_color} + ';'" class="cell white" data-position="3-16" name="currentCell" value="cell3_16">
                 <img th:src="@{${cell3_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_17_color} + ' !important;'" class="cell black" data-position="3-17" name="currentCell" value="cell3_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_17_color} + ';'" class="cell black" data-position="3-17" name="currentCell" value="cell3_17">
                 <img th:src="@{${cell3_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_18_color} + ' !important;'" class="cell white" data-position="3-18" name="currentCell" value="cell3_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_18_color} + ';'" class="cell white" data-position="3-18" name="currentCell" value="cell3_18">
                 <img th:src="@{${cell3_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_19_color} + ' !important;'" class="cell black" data-position="3-19" name="currentCell" value="cell3_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_19_color} + ';'" class="cell black" data-position="3-19" name="currentCell" value="cell3_19">
                 <img th:src="@{${cell3_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_20_color} + ' !important;'" class="cell white" data-position="3-20" name="currentCell" value="cell3_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_20_color} + ';'" class="cell white" data-position="3-20" name="currentCell" value="cell3_20">
                 <img th:src="@{${cell3_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_21_color} + ' !important;'" class="cell black" data-position="3-21" name="currentCell" value="cell3_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_21_color} + ';'" class="cell black" data-position="3-21" name="currentCell" value="cell3_21">
                 <img th:src="@{${cell3_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_22_color} + ' !important;'" class="cell white" data-position="3-22" name="currentCell" value="cell3_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_22_color} + ';'" class="cell white" data-position="3-22" name="currentCell" value="cell3_22">
                 <img th:src="@{${cell3_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_23_color} + ' !important;'" class="cell black" data-position="3-23" name="currentCell" value="cell3_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_23_color} + ';'" class="cell black" data-position="3-23" name="currentCell" value="cell3_23">
                 <img th:src="@{${cell3_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell3_24_color} + ' !important;'" class="cell white" data-position="3-24" name="currentCell" value="cell3_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell3_24_color} + ';'" class="cell white" data-position="3-24" name="currentCell" value="cell3_24">
                 <img th:src="@{${cell3_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
         <!-- ROW 4 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell4_1_color} + ' !important;'" class="cell white" data-position="4-1" name="currentCell" value="cell4_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_1_color} + ';'" class="cell white" data-position="4-1" name="currentCell" value="cell4_1">
                 <img th:src="@{${cell4_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_2_color} + ' !important;'" class="cell black" data-position="4-2" name="currentCell" value="cell4_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_2_color} + ';'" class="cell black" data-position="4-2" name="currentCell" value="cell4_2">
                 <img th:src="@{${cell4_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_3_color} + ' !important;'" class="cell white" data-position="4-3" name="currentCell" value="cell4_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_3_color} + ';'" class="cell white" data-position="4-3" name="currentCell" value="cell4_3">
                 <img th:src="@{${cell4_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_4_color} + ' !important;'" class="cell black" data-position="4-4" name="currentCell" value="cell4_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_4_color} + ';'" class="cell black" data-position="4-4" name="currentCell" value="cell4_4">
                 <img th:src="@{${cell4_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_5_color} + ' !important;'" class="cell white" data-position="4-5" name="currentCell" value="cell4_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_5_color} + ';'" class="cell white" data-position="4-5" name="currentCell" value="cell4_5">
                 <img th:src="@{${cell4_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_6_color} + ' !important;'" class="cell black" data-position="4-6" name="currentCell" value="cell4_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_6_color} + ';'" class="cell black" data-position="4-6" name="currentCell" value="cell4_6">
                 <img th:src="@{${cell4_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_7_color} + ' !important;'" class="cell white" data-position="4-7" name="currentCell" value="cell4_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_7_color} + ';'" class="cell white" data-position="4-7" name="currentCell" value="cell4_7">
                 <img th:src="@{${cell4_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_8_color} + ' !important;'" class="cell black" data-position="4-8" name="currentCell" value="cell4_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_8_color} + ';'" class="cell black" data-position="4-8" name="currentCell" value="cell4_8">
                 <img th:src="@{${cell4_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_9_color} + ' !important;'" class="cell white" data-position="4-9" name="currentCell" value="cell4_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_9_color} + ';'" class="cell white" data-position="4-9" name="currentCell" value="cell4_9">
                 <img th:src="@{${cell4_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_10_color} + ' !important;'" class="cell black" data-position="4-10" name="currentCell" value="cell4_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_10_color} + ';'" class="cell black" data-position="4-10" name="currentCell" value="cell4_10">
                 <img th:src="@{${cell4_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_11_color} + ' !important;'" class="cell white" data-position="4-11" name="currentCell" value="cell4_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_11_color} + ';'" class="cell white" data-position="4-11" name="currentCell" value="cell4_11">
                 <img th:src="@{${cell4_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_12_color} + ' !important;'" class="cell black" data-position="4-12" name="currentCell" value="cell4_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_12_color} + ';'" class="cell black" data-position="4-12" name="currentCell" value="cell4_12">
                 <img th:src="@{${cell4_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_13_color} + ' !important;'" class="cell white" data-position="4-13" name="currentCell" value="cell4_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_13_color} + ';'" class="cell white" data-position="4-13" name="currentCell" value="cell4_13">
                 <img th:src="@{${cell4_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_14_color} + ' !important;'" class="cell black" data-position="4-14" name="currentCell" value="cell4_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_14_color} + ';'" class="cell black" data-position="4-14" name="currentCell" value="cell4_14">
                 <img th:src="@{${cell4_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_15_color} + ' !important;'" class="cell white" data-position="4-15" name="currentCell" value="cell4_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_15_color} + ';'" class="cell white" data-position="4-15" name="currentCell" value="cell4_15">
                 <img th:src="@{${cell4_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_16_color} + ' !important;'" class="cell black" data-position="4-16" name="currentCell" value="cell4_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_16_color} + ';'" class="cell black" data-position="4-16" name="currentCell" value="cell4_16">
                 <img th:src="@{${cell4_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_17_color} + ' !important;'" class="cell white" data-position="4-17" name="currentCell" value="cell4_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_17_color} + ';'" class="cell white" data-position="4-17" name="currentCell" value="cell4_17">
                 <img th:src="@{${cell4_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_18_color} + ' !important;'" class="cell black" data-position="4-18" name="currentCell" value="cell4_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_18_color} + ';'" class="cell black" data-position="4-18" name="currentCell" value="cell4_18">
                 <img th:src="@{${cell4_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_19_color} + ' !important;'" class="cell white" data-position="4-19" name="currentCell" value="cell4_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_19_color} + ';'" class="cell white" data-position="4-19" name="currentCell" value="cell4_19">
                 <img th:src="@{${cell4_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_20_color} + ' !important;'" class="cell black" data-position="4-20" name="currentCell" value="cell4_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_20_color} + ';'" class="cell black" data-position="4-20" name="currentCell" value="cell4_20">
                 <img th:src="@{${cell4_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_21_color} + ' !important;'" class="cell white" data-position="4-21" name="currentCell" value="cell4_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_21_color} + ';'" class="cell white" data-position="4-21" name="currentCell" value="cell4_21">
                 <img th:src="@{${cell4_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_22_color} + ' !important;'" class="cell black" data-position="4-22" name="currentCell" value="cell4_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_22_color} + ';'" class="cell black" data-position="4-22" name="currentCell" value="cell4_22">
                 <img th:src="@{${cell4_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_23_color} + ' !important;'" class="cell white" data-position="4-23" name="currentCell" value="cell4_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_23_color} + ';'" class="cell white" data-position="4-23" name="currentCell" value="cell4_23">
                 <img th:src="@{${cell4_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell4_24_color} + ' !important;'" class="cell black" data-position="4-24" name="currentCell" value="cell4_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell4_24_color} + ';'" class="cell black" data-position="4-24" name="currentCell" value="cell4_24">
                 <img th:src="@{${cell4_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
         <!-- ROW 5 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell5_1_color} + ' !important;'" class="cell black" data-position="5-1" name="currentCell" value="cell5_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_1_color} + ';'" class="cell black" data-position="5-1" name="currentCell" value="cell5_1">
                 <img th:src="@{${cell5_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_2_color} + ' !important;'" class="cell white" data-position="5-2" name="currentCell" value="cell5_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_2_color} + ';'" class="cell white" data-position="5-2" name="currentCell" value="cell5_2">
                 <img th:src="@{${cell5_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_3_color} + ' !important;'" class="cell black" data-position="5-3" name="currentCell" value="cell5_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_3_color} + ';'" class="cell black" data-position="5-3" name="currentCell" value="cell5_3">
                 <img th:src="@{${cell5_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_4_color} + ' !important;'" class="cell white" data-position="5-4" name="currentCell" value="cell5_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_4_color} + ';'" class="cell white" data-position="5-4" name="currentCell" value="cell5_4">
                 <img th:src="@{${cell5_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_5_color} + ' !important;'" class="cell black" data-position="5-5" name="currentCell" value="cell5_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_5_color} + ';'" class="cell black" data-position="5-5" name="currentCell" value="cell5_5">
                 <img th:src="@{${cell5_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_6_color} + ' !important;'" class="cell white" data-position="5-6" name="currentCell" value="cell5_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_6_color} + ';'" class="cell white" data-position="5-6" name="currentCell" value="cell5_6">
                 <img th:src="@{${cell5_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_7_color} + ' !important;'" class="cell black" data-position="5-7" name="currentCell" value="cell5_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_7_color} + ';'" class="cell black" data-position="5-7" name="currentCell" value="cell5_7">
                 <img th:src="@{${cell5_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_8_color} + ' !important;'" class="cell white" data-position="5-8" name="currentCell" value="cell5_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_8_color} + ';'" class="cell white" data-position="5-8" name="currentCell" value="cell5_8">
                 <img th:src="@{${cell5_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_9_color} + ' !important;'" class="cell black" data-position="5-9" name="currentCell" value="cell5_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_9_color} + ';'" class="cell black" data-position="5-9" name="currentCell" value="cell5_9">
                 <img th:src="@{${cell5_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_10_color} + ' !important;'" class="cell white" data-position="5-10" name="currentCell" value="cell5_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_10_color} + ';'" class="cell white" data-position="5-10" name="currentCell" value="cell5_10">
                 <img th:src="@{${cell5_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_11_color} + ' !important;'" class="cell black" data-position="5-11" name="currentCell" value="cell5_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_11_color} + ';'" class="cell black" data-position="5-11" name="currentCell" value="cell5_11">
                 <img th:src="@{${cell5_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_12_color} + ' !important;'" class="cell white" data-position="5-12" name="currentCell" value="cell5_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_12_color} + ';'" class="cell white" data-position="5-12" name="currentCell" value="cell5_12">
                 <img th:src="@{${cell5_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_13_color} + ' !important;'" class="cell black" data-position="5-13" name="currentCell" value="cell5_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_13_color} + ';'" class="cell black" data-position="5-13" name="currentCell" value="cell5_13">
                 <img th:src="@{${cell5_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_14_color} + ' !important;'" class="cell white" data-position="5-14" name="currentCell" value="cell5_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_14_color} + ';'" class="cell white" data-position="5-14" name="currentCell" value="cell5_14">
                 <img th:src="@{${cell5_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_15_color} + ' !important;'" class="cell black" data-position="5-15" name="currentCell" value="cell5_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_15_color} + ';'" class="cell black" data-position="5-15" name="currentCell" value="cell5_15">
                 <img th:src="@{${cell5_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_16_color} + ' !important;'" class="cell white" data-position="5-16" name="currentCell" value="cell5_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_16_color} + ';'" class="cell white" data-position="5-16" name="currentCell" value="cell5_16">
                 <img th:src="@{${cell5_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_17_color} + ' !important;'" class="cell black" data-position="5-17" name="currentCell" value="cell5_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_17_color} + ';'" class="cell black" data-position="5-17" name="currentCell" value="cell5_17">
                 <img th:src="@{${cell5_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_18_color} + ' !important;'" class="cell white" data-position="5-18" name="currentCell" value="cell5_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_18_color} + ';'" class="cell white" data-position="5-18" name="currentCell" value="cell5_18">
                 <img th:src="@{${cell5_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_19_color} + ' !important;'" class="cell black" data-position="5-19" name="currentCell" value="cell5_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_19_color} + ';'" class="cell black" data-position="5-19" name="currentCell" value="cell5_19">
                 <img th:src="@{${cell5_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_20_color} + ' !important;'" class="cell white" data-position="5-20" name="currentCell" value="cell5_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_20_color} + ';'" class="cell white" data-position="5-20" name="currentCell" value="cell5_20">
                 <img th:src="@{${cell5_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_21_color} + ' !important;'" class="cell black" data-position="5-21" name="currentCell" value="cell5_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_21_color} + ';'" class="cell black" data-position="5-21" name="currentCell" value="cell5_21">
                 <img th:src="@{${cell5_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_22_color} + ' !important;'" class="cell white" data-position="5-22" name="currentCell" value="cell5_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_22_color} + ';'" class="cell white" data-position="5-22" name="currentCell" value="cell5_22">
                 <img th:src="@{${cell5_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_23_color} + ' !important;'" class="cell black" data-position="5-23" name="currentCell" value="cell5_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_23_color} + ';'" class="cell black" data-position="5-23" name="currentCell" value="cell5_23">
                 <img th:src="@{${cell5_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell5_24_color} + ' !important;'" class="cell white" data-position="5-24" name="currentCell" value="cell5_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell5_24_color} + ';'" class="cell white" data-position="5-24" name="currentCell" value="cell5_24">
                 <img th:src="@{${cell5_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
         <!-- ROW 6 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell6_1_color} + ' !important;'" class="cell white" data-position="6-1" name="currentCell" value="cell6_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_1_color} + ';'" class="cell white" data-position="6-1" name="currentCell" value="cell6_1">
                 <img th:src="@{${cell6_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_2_color} + ' !important;'" class="cell black" data-position="6-2" name="currentCell" value="cell6_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_2_color} + ';'" class="cell black" data-position="6-2" name="currentCell" value="cell6_2">
                 <img th:src="@{${cell6_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_3_color} + ' !important;'" class="cell white" data-position="6-3" name="currentCell" value="cell6_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_3_color} + ';'" class="cell white" data-position="6-3" name="currentCell" value="cell6_3">
                 <img th:src="@{${cell6_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_4_color} + ' !important;'" class="cell black" data-position="6-4" name="currentCell" value="cell6_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_4_color} + ';'" class="cell black" data-position="6-4" name="currentCell" value="cell6_4">
                 <img th:src="@{${cell6_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_5_color} + ' !important;'" class="cell white" data-position="6-5" name="currentCell" value="cell6_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_5_color} + ';'" class="cell white" data-position="6-5" name="currentCell" value="cell6_5">
                 <img th:src="@{${cell6_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_6_color} + ' !important;'" class="cell black" data-position="6-6" name="currentCell" value="cell6_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_6_color} + ';'" class="cell black" data-position="6-6" name="currentCell" value="cell6_6">
                 <img th:src="@{${cell6_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_7_color} + ' !important;'" class="cell white" data-position="6-7" name="currentCell" value="cell6_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_7_color} + ';'" class="cell white" data-position="6-7" name="currentCell" value="cell6_7">
                 <img th:src="@{${cell6_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_8_color} + ' !important;'" class="cell black" data-position="6-8" name="currentCell" value="cell6_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_8_color} + ';'" class="cell black" data-position="6-8" name="currentCell" value="cell6_8">
                 <img th:src="@{${cell6_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_9_color} + ' !important;'" class="cell white" data-position="6-9" name="currentCell" value="cell6_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_9_color} + ';'" class="cell white" data-position="6-9" name="currentCell" value="cell6_9">
                 <img th:src="@{${cell6_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_10_color} + ' !important;'" class="cell black" data-position="6-10" name="currentCell" value="cell6_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_10_color} + ';'" class="cell black" data-position="6-10" name="currentCell" value="cell6_10">
                 <img th:src="@{${cell6_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_11_color} + ' !important;'" class="cell white" data-position="6-11" name="currentCell" value="cell6_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_11_color} + ';'" class="cell white" data-position="6-11" name="currentCell" value="cell6_11">
                 <img th:src="@{${cell6_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_12_color} + ' !important;'" class="cell black" data-position="6-12" name="currentCell" value="cell6_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_12_color} + ';'" class="cell black" data-position="6-12" name="currentCell" value="cell6_12">
                 <img th:src="@{${cell6_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_13_color} + ' !important;'" class="cell white" data-position="6-13" name="currentCell" value="cell6_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_13_color} + ';'" class="cell white" data-position="6-13" name="currentCell" value="cell6_13">
                 <img th:src="@{${cell6_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_14_color} + ' !important;'" class="cell black" data-position="6-14" name="currentCell" value="cell6_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_14_color} + ';'" class="cell black" data-position="6-14" name="currentCell" value="cell6_14">
                 <img th:src="@{${cell6_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_15_color} + ' !important;'" class="cell white" data-position="6-15" name="currentCell" value="cell6_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_15_color} + ';'" class="cell white" data-position="6-15" name="currentCell" value="cell6_15">
                 <img th:src="@{${cell6_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_16_color} + ' !important;'" class="cell black" data-position="6-16" name="currentCell" value="cell6_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_16_color} + ';'" class="cell black" data-position="6-16" name="currentCell" value="cell6_16">
                 <img th:src="@{${cell6_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_17_color} + ' !important;'" class="cell white" data-position="6-17" name="currentCell" value="cell6_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_17_color} + ';'" class="cell white" data-position="6-17" name="currentCell" value="cell6_17">
                 <img th:src="@{${cell6_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_18_color} + ' !important;'" class="cell black" data-position="6-18" name="currentCell" value="cell6_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_18_color} + ';'" class="cell black" data-position="6-18" name="currentCell" value="cell6_18">
                 <img th:src="@{${cell6_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_19_color} + ' !important;'" class="cell white" data-position="6-19" name="currentCell" value="cell6_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_19_color} + ';'" class="cell white" data-position="6-19" name="currentCell" value="cell6_19">
                 <img th:src="@{${cell6_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_20_color} + ' !important;'" class="cell black" data-position="6-20" name="currentCell" value="cell6_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_20_color} + ';'" class="cell black" data-position="6-20" name="currentCell" value="cell6_20">
                 <img th:src="@{${cell6_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_21_color} + ' !important;'" class="cell white" data-position="6-21" name="currentCell" value="cell6_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_21_color} + ';'" class="cell white" data-position="6-21" name="currentCell" value="cell6_21">
                 <img th:src="@{${cell6_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_22_color} + ' !important;'" class="cell black" data-position="6-22" name="currentCell" value="cell6_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_22_color} + ';'" class="cell black" data-position="6-22" name="currentCell" value="cell6_22">
                 <img th:src="@{${cell6_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_23_color} + ' !important;'" class="cell white" data-position="6-23" name="currentCell" value="cell6_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_23_color} + ';'" class="cell white" data-position="6-23" name="currentCell" value="cell6_23">
                 <img th:src="@{${cell6_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell6_24_color} + ' !important;'" class="cell black" data-position="6-24" name="currentCell" value="cell6_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell6_24_color} + ';'" class="cell black" data-position="6-24" name="currentCell" value="cell6_24">
                 <img th:src="@{${cell6_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
         <!-- ROW 7 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell7_1_color} + ' !important;'" class="cell black" data-position="7-1" name="currentCell" value="cell7_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_1_color} + ';'" class="cell black" data-position="7-1" name="currentCell" value="cell7_1">
                 <img th:src="@{${cell7_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_2_color} + ' !important;'" class="cell white" data-position="7-2" name="currentCell" value="cell7_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_2_color} + ';'" class="cell white" data-position="7-2" name="currentCell" value="cell7_2">
                 <img th:src="@{${cell7_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_3_color} + ' !important;'" class="cell black" data-position="7-3" name="currentCell" value="cell7_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_3_color} + ';'" class="cell black" data-position="7-3" name="currentCell" value="cell7_3">
                 <img th:src="@{${cell7_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_4_color} + ' !important;'" class="cell white" data-position="7-4" name="currentCell" value="cell7_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_4_color} + ';'" class="cell white" data-position="7-4" name="currentCell" value="cell7_4">
                 <img th:src="@{${cell7_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_5_color} + ' !important;'" class="cell black" data-position="7-5" name="currentCell" value="cell7_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_5_color} + ';'" class="cell black" data-position="7-5" name="currentCell" value="cell7_5">
                 <img th:src="@{${cell7_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_6_color} + ' !important;'" class="cell white" data-position="7-6" name="currentCell" value="cell7_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_6_color} + ';'" class="cell white" data-position="7-6" name="currentCell" value="cell7_6">
                 <img th:src="@{${cell7_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_7_color} + ' !important;'" class="cell black" data-position="7-7" name="currentCell" value="cell7_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_7_color} + ';'" class="cell black" data-position="7-7" name="currentCell" value="cell7_7">
                 <img th:src="@{${cell7_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_8_color} + ' !important;'" class="cell white" data-position="7-8" name="currentCell" value="cell7_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_8_color} + ';'" class="cell white" data-position="7-8" name="currentCell" value="cell7_8">
                 <img th:src="@{${cell7_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_9_color} + ' !important;'" class="cell black" data-position="7-9" name="currentCell" value="cell7_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_9_color} + ';'" class="cell black" data-position="7-9" name="currentCell" value="cell7_9">
                 <img th:src="@{${cell7_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_10_color} + ' !important;'" class="cell white" data-position="7-10" name="currentCell" value="cell7_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_10_color} + ';'" class="cell white" data-position="7-10" name="currentCell" value="cell7_10">
                 <img th:src="@{${cell7_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_11_color} + ' !important;'" class="cell black" data-position="7-11" name="currentCell" value="cell7_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_11_color} + ';'" class="cell black" data-position="7-11" name="currentCell" value="cell7_11">
                 <img th:src="@{${cell7_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_12_color} + ' !important;'" class="cell white" data-position="7-12" name="currentCell" value="cell7_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_12_color} + ';'" class="cell white" data-position="7-12" name="currentCell" value="cell7_12">
                 <img th:src="@{${cell7_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_13_color} + ' !important;'" class="cell black" data-position="7-13" name="currentCell" value="cell7_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_13_color} + ';'" class="cell black" data-position="7-13" name="currentCell" value="cell7_13">
                 <img th:src="@{${cell7_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_14_color} + ' !important;'" class="cell white" data-position="7-14" name="currentCell" value="cell7_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_14_color} + ';'" class="cell white" data-position="7-14" name="currentCell" value="cell7_14">
                 <img th:src="@{${cell7_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_15_color} + ' !important;'" class="cell black" data-position="7-15" name="currentCell" value="cell7_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_15_color} + ';'" class="cell black" data-position="7-15" name="currentCell" value="cell7_15">
                 <img th:src="@{${cell7_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_16_color} + ' !important;'" class="cell white" data-position="7-16" name="currentCell" value="cell7_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_16_color} + ';'" class="cell white" data-position="7-16" name="currentCell" value="cell7_16">
                 <img th:src="@{${cell7_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_17_color} + ' !important;'" class="cell black" data-position="7-17" name="currentCell" value="cell7_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_17_color} + ';'" class="cell black" data-position="7-17" name="currentCell" value="cell7_17">
                 <img th:src="@{${cell7_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_18_color} + ' !important;'" class="cell white" data-position="7-18" name="currentCell" value="cell7_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_18_color} + ';'" class="cell white" data-position="7-18" name="currentCell" value="cell7_18">
                 <img th:src="@{${cell7_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_19_color} + ' !important;'" class="cell black" data-position="7-19" name="currentCell" value="cell7_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_19_color} + ';'" class="cell black" data-position="7-19" name="currentCell" value="cell7_19">
                 <img th:src="@{${cell7_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_20_color} + ' !important;'" class="cell white" data-position="7-20" name="currentCell" value="cell7_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_20_color} + ';'" class="cell white" data-position="7-20" name="currentCell" value="cell7_20">
                 <img th:src="@{${cell7_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_21_color} + ' !important;'" class="cell black" data-position="7-21" name="currentCell" value="cell7_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_21_color} + ';'" class="cell black" data-position="7-21" name="currentCell" value="cell7_21">
                 <img th:src="@{${cell7_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_22_color} + ' !important;'" class="cell white" data-position="7-22" name="currentCell" value="cell7_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_22_color} + ';'" class="cell white" data-position="7-22" name="currentCell" value="cell7_22">
                 <img th:src="@{${cell7_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_23_color} + ' !important;'" class="cell black" data-position="7-23" name="currentCell" value="cell7_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_23_color} + ';'" class="cell black" data-position="7-23" name="currentCell" value="cell7_23">
                 <img th:src="@{${cell7_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell7_24_color} + ' !important;'" class="cell white" data-position="7-24" name="currentCell" value="cell7_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell7_24_color} + ';'" class="cell white" data-position="7-24" name="currentCell" value="cell7_24">
                 <img th:src="@{${cell7_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
         <!-- ROW 8 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell8_1_color} + ' !important;'" class="cell white" data-position="8-1" name="currentCell" value="cell8_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_1_color} + ';'" class="cell white" data-position="8-1" name="currentCell" value="cell8_1">
                 <img th:src="@{${cell8_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_2_color} + ' !important;'" class="cell black" data-position="8-2" name="currentCell" value="cell8_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_2_color} + ';'" class="cell black" data-position="8-2" name="currentCell" value="cell8_2">
                 <img th:src="@{${cell8_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_3_color} + ' !important;'" class="cell white" data-position="8-3" name="currentCell" value="cell8_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_3_color} + ';'" class="cell white" data-position="8-3" name="currentCell" value="cell8_3">
                 <img th:src="@{${cell8_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_4_color} + ' !important;'" class="cell black" data-position="8-4" name="currentCell" value="cell8_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_4_color} + ';'" class="cell black" data-position="8-4" name="currentCell" value="cell8_4">
                 <img th:src="@{${cell8_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_5_color} + ' !important;'" class="cell white" data-position="8-5" name="currentCell" value="cell8_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_5_color} + ';'" class="cell white" data-position="8-5" name="currentCell" value="cell8_5">
                 <img th:src="@{${cell8_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_6_color} + ' !important;'" class="cell black" data-position="8-6" name="currentCell" value="cell8_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_6_color} + ';'" class="cell black" data-position="8-6" name="currentCell" value="cell8_6">
                 <img th:src="@{${cell8_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_7_color} + ' !important;'" class="cell white" data-position="8-7" name="currentCell" value="cell8_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_7_color} + ';'" class="cell white" data-position="8-7" name="currentCell" value="cell8_7">
                 <img th:src="@{${cell8_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_8_color} + ' !important;'" class="cell black" data-position="8-8" name="currentCell" value="cell8_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_8_color} + ';'" class="cell black" data-position="8-8" name="currentCell" value="cell8_8">
                 <img th:src="@{${cell8_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_9_color} + ' !important;'" class="cell white" data-position="8-9" name="currentCell" value="cell8_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_9_color} + ';'" class="cell white" data-position="8-9" name="currentCell" value="cell8_9">
                 <img th:src="@{${cell8_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_10_color} + ' !important;'" class="cell black" data-position="8-10" name="currentCell" value="cell8_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_10_color} + ';'" class="cell black" data-position="8-10" name="currentCell" value="cell8_10">
                 <img th:src="@{${cell8_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_11_color} + ' !important;'" class="cell white" data-position="8-11" name="currentCell" value="cell8_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_11_color} + ';'" class="cell white" data-position="8-11" name="currentCell" value="cell8_11">
                 <img th:src="@{${cell8_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_12_color} + ' !important;'" class="cell black" data-position="8-12" name="currentCell" value="cell8_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_12_color} + ';'" class="cell black" data-position="8-12" name="currentCell" value="cell8_12">
                 <img th:src="@{${cell8_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_13_color} + ' !important;'" class="cell white" data-position="8-13" name="currentCell" value="cell8_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_13_color} + ';'" class="cell white" data-position="8-13" name="currentCell" value="cell8_13">
                 <img th:src="@{${cell8_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_14_color} + ' !important;'" class="cell black" data-position="8-14" name="currentCell" value="cell8_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_14_color} + ';'" class="cell black" data-position="8-14" name="currentCell" value="cell8_14">
                 <img th:src="@{${cell8_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_15_color} + ' !important;'" class="cell white" data-position="8-15" name="currentCell" value="cell8_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_15_color} + ';'" class="cell white" data-position="8-15" name="currentCell" value="cell8_15">
                 <img th:src="@{${cell8_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_16_color} + ' !important;'" class="cell black" data-position="8-16" name="currentCell" value="cell8_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_16_color} + ';'" class="cell black" data-position="8-16" name="currentCell" value="cell8_16">
                 <img th:src="@{${cell8_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_17_color} + ' !important;'" class="cell white" data-position="8-17" name="currentCell" value="cell8_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_17_color} + ';'" class="cell white" data-position="8-17" name="currentCell" value="cell8_17">
                 <img th:src="@{${cell8_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_18_color} + ' !important;'" class="cell black" data-position="8-18" name="currentCell" value="cell8_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_18_color} + ';'" class="cell black" data-position="8-18" name="currentCell" value="cell8_18">
                 <img th:src="@{${cell8_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_19_color} + ' !important;'" class="cell white" data-position="8-19" name="currentCell" value="cell8_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_19_color} + ';'" class="cell white" data-position="8-19" name="currentCell" value="cell8_19">
                 <img th:src="@{${cell8_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_20_color} + ' !important;'" class="cell black" data-position="8-20" name="currentCell" value="cell8_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_20_color} + ';'" class="cell black" data-position="8-20" name="currentCell" value="cell8_20">
                 <img th:src="@{${cell8_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_21_color} + ' !important;'" class="cell white" data-position="8-21" name="currentCell" value="cell8_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_21_color} + ';'" class="cell white" data-position="8-21" name="currentCell" value="cell8_21">
                 <img th:src="@{${cell8_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_22_color} + ' !important;'" class="cell black" data-position="8-22" name="currentCell" value="cell8_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_22_color} + ';'" class="cell black" data-position="8-22" name="currentCell" value="cell8_22">
                 <img th:src="@{${cell8_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_23_color} + ' !important;'" class="cell white" data-position="8-23" name="currentCell" value="cell8_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_23_color} + ';'" class="cell white" data-position="8-23" name="currentCell" value="cell8_23">
                 <img th:src="@{${cell8_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell8_24_color} + ' !important;'" class="cell black" data-position="8-24" name="currentCell" value="cell8_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell8_24_color} + ';'" class="cell black" data-position="8-24" name="currentCell" value="cell8_24">
                 <img th:src="@{${cell8_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
         <!-- ROW 9 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell9_1_color} + ' !important;'" class="cell black" data-position="9-1" name="currentCell" value="cell9_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_1_color} + ';'" class="cell black" data-position="9-1" name="currentCell" value="cell9_1">
                 <img th:src="@{${cell9_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_2_color} + ' !important;'" class="cell white" data-position="9-2" name="currentCell" value="cell9_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_2_color} + ';'" class="cell white" data-position="9-2" name="currentCell" value="cell9_2">
                 <img th:src="@{${cell9_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_3_color} + ' !important;'" class="cell black" data-position="9-3" name="currentCell" value="cell9_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_3_color} + ';'" class="cell black" data-position="9-3" name="currentCell" value="cell9_3">
                 <img th:src="@{${cell9_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_4_color} + ' !important;'" class="cell white" data-position="9-4" name="currentCell" value="cell9_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_4_color} + ';'" class="cell white" data-position="9-4" name="currentCell" value="cell9_4">
                 <img th:src="@{${cell9_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_5_color} + ' !important;'" class="cell black" data-position="9-5" name="currentCell" value="cell9_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_5_color} + ';'" class="cell black" data-position="9-5" name="currentCell" value="cell9_5">
                 <img th:src="@{${cell9_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_6_color} + ' !important;'" class="cell white" data-position="9-6" name="currentCell" value="cell9_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_6_color} + ';'" class="cell white" data-position="9-6" name="currentCell" value="cell9_6">
                 <img th:src="@{${cell9_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_7_color} + ' !important;'" class="cell black" data-position="9-7" name="currentCell" value="cell9_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_7_color} + ';'" class="cell black" data-position="9-7" name="currentCell" value="cell9_7">
                 <img th:src="@{${cell9_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_8_color} + ' !important;'" class="cell white" data-position="9-8" name="currentCell" value="cell9_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_8_color} + ';'" class="cell white" data-position="9-8" name="currentCell" value="cell9_8">
                 <img th:src="@{${cell9_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_9_color} + ' !important;'" class="cell black" data-position="9-9" name="currentCell" value="cell9_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_9_color} + ';'" class="cell black" data-position="9-9" name="currentCell" value="cell9_9">
                 <img th:src="@{${cell9_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_10_color} + ' !important;'" class="cell white" data-position="9-10" name="currentCell" value="cell9_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_10_color} + ';'" class="cell white" data-position="9-10" name="currentCell" value="cell9_10">
                 <img th:src="@{${cell9_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_11_color} + ' !important;'" class="cell black" data-position="9-11" name="currentCell" value="cell9_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_11_color} + ';'" class="cell black" data-position="9-11" name="currentCell" value="cell9_11">
                 <img th:src="@{${cell9_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_12_color} + ' !important;'" class="cell white" data-position="9-12" name="currentCell" value="cell9_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_12_color} + ';'" class="cell white" data-position="9-12" name="currentCell" value="cell9_12">
                 <img th:src="@{${cell9_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_13_color} + ' !important;'" class="cell black" data-position="9-13" name="currentCell" value="cell9_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_13_color} + ';'" class="cell black" data-position="9-13" name="currentCell" value="cell9_13">
                 <img th:src="@{${cell9_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_14_color} + ' !important;'" class="cell white" data-position="9-14" name="currentCell" value="cell9_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_14_color} + ';'" class="cell white" data-position="9-14" name="currentCell" value="cell9_14">
                 <img th:src="@{${cell9_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_15_color} + ' !important;'" class="cell black" data-position="9-15" name="currentCell" value="cell9_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_15_color} + ';'" class="cell black" data-position="9-15" name="currentCell" value="cell9_15">
                 <img th:src="@{${cell9_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_16_color} + ' !important;'" class="cell white" data-position="9-16" name="currentCell" value="cell9_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_16_color} + ';'" class="cell white" data-position="9-16" name="currentCell" value="cell9_16">
                 <img th:src="@{${cell9_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_17_color} + ' !important;'" class="cell black" data-position="9-17" name="currentCell" value="cell9_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_17_color} + ';'" class="cell black" data-position="9-17" name="currentCell" value="cell9_17">
                 <img th:src="@{${cell9_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_18_color} + ' !important;'" class="cell white" data-position="9-18" name="currentCell" value="cell9_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_18_color} + ';'" class="cell white" data-position="9-18" name="currentCell" value="cell9_18">
                 <img th:src="@{${cell9_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_19_color} + ' !important;'" class="cell black" data-position="9-19" name="currentCell" value="cell9_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_19_color} + ';'" class="cell black" data-position="9-19" name="currentCell" value="cell9_19">
                 <img th:src="@{${cell9_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_20_color} + ' !important;'" class="cell white" data-position="9-20" name="currentCell" value="cell9_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_20_color} + ';'" class="cell white" data-position="9-20" name="currentCell" value="cell9_20">
                 <img th:src="@{${cell9_20_img}}" alt="Button Image" style="width: 50px; height: 78px;">
             </button>
-            <button th:style="'border: ' + ${cell9_21_color} + ' !important;'" class="cell black" data-position="9-21" name="currentCell" value="cell9_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_21_color} + ';'" class="cell black" data-position="9-21" name="currentCell" value="cell9_21">
                 <img th:src="@{${cell9_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_22_color} + ' !important;'" class="cell white" data-position="9-22" name="currentCell" value="cell9_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_22_color} + ';'" class="cell white" data-position="9-22" name="currentCell" value="cell9_22">
                 <img th:src="@{${cell9_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_23_color} + ' !important;'" class="cell black" data-position="9-23" name="currentCell" value="cell9_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_23_color} + ';'" class="cell black" data-position="9-23" name="currentCell" value="cell9_23">
                 <img th:src="@{${cell9_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell9_24_color} + ' !important;'" class="cell white" data-position="9-24" name="currentCell" value="cell9_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_24_color} + ';'" class="cell white" data-position="9-24" name="currentCell" value="cell9_24">
                 <img th:src="@{${cell9_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
         <!-- ROW 10 -->
         <div class="row">
-            <button th:style="'border: ' + ${cell10_1_color} + ' !important;'" class="cell white" data-position="10-1" name="currentCell" value="cell10_1">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_1_color} + ';'" class="cell white" data-position="10-1" name="currentCell" value="cell10_1">
                 <img th:src="@{${cell10_1_img}}" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_2_color} + ' !important;'" class="cell black" data-position="10-2" name="currentCell" value="cell10_2">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_2_color} + ';'" class="cell black" data-position="10-2" name="currentCell" value="cell10_2">
                 <img th:src="@{${cell10_2_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_3_color} + ' !important;'" class="cell white" data-position="10-3" name="currentCell" value="cell10_3">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_3_color} + ';'" class="cell white" data-position="10-3" name="currentCell" value="cell10_3">
                 <img th:src="@{${cell10_3_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_4_color} + ' !important;'" class="cell black" data-position="10-4" name="currentCell" value="cell10_4">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_4_color} + ';'" class="cell black" data-position="10-4" name="currentCell" value="cell10_4">
                 <img th:src="@{${cell10_4_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_5_color} + ' !important;'" class="cell white" data-position="10-5" name="currentCell" value="cell10_5">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_5_color} + ';'" class="cell white" data-position="10-5" name="currentCell" value="cell10_5">
                 <img th:src="@{${cell10_5_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_6_color} + ' !important;'" class="cell black" data-position="10-6" name="currentCell" value="cell10_6">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_6_color} + ';'" class="cell black" data-position="10-6" name="currentCell" value="cell10_6">
                 <img th:src="@{${cell10_6_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_7_color} + ' !important;'" class="cell white" data-position="10-7" name="currentCell" value="cell10_7">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_7_color} + ';'" class="cell white" data-position="10-7" name="currentCell" value="cell10_7">
                 <img th:src="@{${cell10_7_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_8_color} + ' !important;'" class="cell black" data-position="10-8" name="currentCell" value="cell10_8">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_8_color} + ';'" class="cell black" data-position="10-8" name="currentCell" value="cell10_8">
                 <img th:src="@{${cell10_8_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_9_color} + ' !important;'" class="cell white" data-position="10-9" name="currentCell" value="cell10_9">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_9_color} + ';'" class="cell white" data-position="10-9" name="currentCell" value="cell10_9">
                 <img th:src="@{${cell10_9_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_10_color} + ' !important;'" class="cell black" data-position="10-10" name="currentCell" value="cell10_10">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_10_color} + ';'" class="cell black" data-position="10-10" name="currentCell" value="cell10_10">
                 <img th:src="@{${cell10_10_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_11_color} + ' !important;'" class="cell white" data-position="10-11" name="currentCell" value="cell10_11">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_11_color} + ';'" class="cell white" data-position="10-11" name="currentCell" value="cell10_11">
                 <img th:src="@{${cell10_11_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_12_color} + ' !important;'" class="cell black" data-position="10-12" name="currentCell" value="cell10_12">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_12_color} + ';'" class="cell black" data-position="10-12" name="currentCell" value="cell10_12">
                 <img th:src="@{${cell10_12_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_13_color} + ' !important;'" class="cell white" data-position="10-13" name="currentCell" value="cell10_13">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_13_color} + ';'" class="cell white" data-position="10-13" name="currentCell" value="cell10_13">
                 <img th:src="@{${cell10_13_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_14_color} + ' !important;'" class="cell black" data-position="10-14" name="currentCell" value="cell10_14">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_14_color} + ';'" class="cell black" data-position="10-14" name="currentCell" value="cell10_14">
                 <img th:src="@{${cell10_14_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_15_color} + ' !important;'" class="cell white" data-position="10-15" name="currentCell" value="cell10_15">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_15_color} + ';'" class="cell white" data-position="10-15" name="currentCell" value="cell10_15">
                 <img th:src="@{${cell10_15_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_16_color} + ' !important;'" class="cell black" data-position="10-16" name="currentCell" value="cell10_16">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_16_color} + ';'" class="cell black" data-position="10-16" name="currentCell" value="cell10_16">
                 <img th:src="@{${cell10_16_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_17_color} + ' !important;'" class="cell white" data-position="10-17" name="currentCell" value="cell10_17">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_17_color} + ';'" class="cell white" data-position="10-17" name="currentCell" value="cell10_17">
                 <img th:src="@{${cell10_17_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_18_color} + ' !important;'" class="cell black" data-position="10-18" name="currentCell" value="cell10_18">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_18_color} + ';'" class="cell black" data-position="10-18" name="currentCell" value="cell10_18">
                 <img th:src="@{${cell10_18_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_19_color} + ' !important;'" class="cell white" data-position="10-19" name="currentCell" value="cell10_19">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_19_color} + ';'" class="cell white" data-position="10-19" name="currentCell" value="cell10_19">
                 <img th:src="@{${cell10_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_20_color} + ' !important;'" class="cell black" data-position="10-20" name="currentCell" value="cell10_20">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_20_color} + ';'" class="cell black" data-position="10-20" name="currentCell" value="cell10_20">
                 <img th:src="@{${cell10_20_img}}" alt="Button Image" style="width: 50px; height: 75px; margin-top: -18px;">
             </button>
-            <button th:style="'border: ' + ${cell10_21_color} + ' !important;'" class="cell white" data-position="10-21" name="currentCell" value="cell10_21">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_21_color} + ';'" class="cell white" data-position="10-21" name="currentCell" value="cell10_21">
                 <img th:src="@{${cell10_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_22_color} + ' !important;'" class="cell black" data-position="10-22" name="currentCell" value="cell10_22">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_22_color} + ';'" class="cell black" data-position="10-22" name="currentCell" value="cell10_22">
                 <img th:src="@{${cell10_22_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_23_color} + ' !important;'" class="cell white" data-position="10-23" name="currentCell" value="cell10_23">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_23_color} + ';'" class="cell white" data-position="10-23" name="currentCell" value="cell10_23">
                 <img th:src="@{${cell10_23_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
-            <button th:style="'border: ' + ${cell10_24_color} + ' !important;'" class="cell black" data-position="10-24" name="currentCell" value="cell10_24">
+            <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_24_color} + ';'" class="cell black" data-position="10-24" name="currentCell" value="cell10_24">
                 <img th:src="@{${cell10_24_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
         </div>
