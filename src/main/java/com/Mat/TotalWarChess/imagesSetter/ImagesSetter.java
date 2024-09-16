@@ -15,19 +15,19 @@ public class ImagesSetter {
        }
 
         // CREATING FIGURES 1 ROW
-       FigureImage figureImage1_1 = new FigureImage("cell1_1", "cell1_1_img", "images/greenskin/greenskin_shaman_vizard.png", "", 1, "cell1_1_color");
+       FigureImage figureImage1_1 = new FigureImage("cell1_1", "cell1_1_img", "images/greenskin/greenskin_shaman_wizard.png", "", 1, "cell1_1_color");
        FigureImage figureImage1_2 = new FigureImage("cell1_2", "cell1_2_img", "images/greenskin/greenskin_hound.png", "", 2, "cell1_2_color");
        FigureImage figureImage1_3 = new FigureImage("cell1_3", "cell1_3_img", "images/greenskin/greenskin_troll_rook.png", "", 3, "cell1_3_color");
        FigureImage figureImage1_4 = new FigureImage("cell1_4", "cell1_4_img", "images/greenskin/greenskin_black_orcs_queen.png", "", 4, "cell1_4_color");
        FigureImage figureImage1_5 = new FigureImage("cell1_5", "cell1_5_img", "images/greenskin/greenskin_troll_rook.png", "", 5, "cell1_5_color");
        FigureImage figureImage1_6 = new FigureImage("cell1_6", "cell1_6_img", "images/greenskin/greenskin_chariot.png", "", 6, "cell1_6_color");
-       FigureImage figureImage1_7 = new FigureImage("cell1_7", "cell1_7_img", "images/greenskin/greenskin_shaman_vizard.png", "", 7, "cell1_7_color");
+       FigureImage figureImage1_7 = new FigureImage("cell1_7", "cell1_7_img", "images/greenskin/greenskin_shaman_wizard.png", "", 7, "cell1_7_color");
        FigureImage figureImage1_8 = new FigureImage("cell1_8", "cell1_8_img", "images/greenskin/greenskin_boyz_pawn.png", "", 8, "cell1_8_color");
        FigureImage figureImage1_9 = new FigureImage("cell1_9", "cell1_9_img", "images/blank.png", "", 9, "cell1_9_color");
        FigureImage figureImage1_10 = new FigureImage("cell1_10", "cell1_10_img", "images/greenskin/greenskin_cavalry.png", "", 10, "cell1_10_color");
        FigureImage figureImage1_11 = new FigureImage("cell1_11", "cell1_11_img", "images/greenskin/greenskin_black_orcs_queen.png", "", 11, "cell1_11_color");
        FigureImage figureImage1_12 = new FigureImage("cell1_12", "cell1_12_img", "images/greenskin/greenskin_warlord_king.png", "", 12, "cell1_12_color");
-       FigureImage figureImage1_13 = new FigureImage("cell1_13", "cell1_13_img", "images/greenskin/greenskin_shaman_vizard.png", "", 13, "cell1_13_color");
+       FigureImage figureImage1_13 = new FigureImage("cell1_13", "cell1_13_img", "images/greenskin/greenskin_shaman_wizard.png", "", 13, "cell1_13_color");
        FigureImage figureImage1_14 = new FigureImage("cell1_14", "cell1_14_img", "images/greenskin/greenskin_black_orcs_queen.png", "", 14, "cell1_14_color");
        FigureImage figureImage1_15 = new FigureImage("cell1_15", "cell1_15_img", "images/greenskin/greenskin_cavalry.png", "", 15, "cell1_15_color");
        FigureImage figureImage1_16 = new FigureImage("cell1_16", "cell1_16_img", "images/blank.png", "", 16, "cell1_16_color");
@@ -265,6 +265,9 @@ public class ImagesSetter {
        FigureImage figureImage10_23 = new FigureImage("cell10_23", "cell10_23_img", "images/Reikland/Reikland_griffin.png", "  ", 239, "cell10_23_color");
        FigureImage figureImage10_24 = new FigureImage("cell10_24", "cell10_24_img", "images/Reikland/Reikland_griffin.png", "  ", 240, "cell10_24_color");
 
+
+       FigureImage figureImage00_00 = new FigureImage("cell00_00", "cell00_00_img", "images/mortar_reikland.png", "  ", 000, "cell00_00_color");
+       FigureImage figureImage00_01 = new FigureImage("cell00_01", "cell00_01_img", "images/catapulta_mortar_greenskin.png", "  ", 001, "cell00_01_color");
 
         // ADDITING IMAGES TO ARRAY 1 ROW
        chessMoves.addFigure(figureImage1_1);
@@ -516,6 +519,9 @@ public class ImagesSetter {
        chessMoves.addFigure(figureImage10_22);
        chessMoves.addFigure(figureImage10_23);
        chessMoves.addFigure(figureImage10_24);
+
+       chessMoves.addFigureMorta(figureImage00_00);
+       chessMoves.addFigureMorta(figureImage00_01);
 
 
 
@@ -772,6 +778,10 @@ public class ImagesSetter {
        model.addAttribute(figureImage10_23.getImageName(), figureImage10_23.getPath());
        model.addAttribute(figureImage10_24.getImageName(), figureImage10_24.getPath());
 
+       model.addAttribute(figureImage00_00.getImageName(), figureImage00_00.getPath());
+       model.addAttribute(figureImage00_01.getImageName(), figureImage00_01.getPath());
+
+
 
         // ADDING TO MODEL BORDERS 1 ROW
         model.addAttribute(figureImage1_1.getNameForColor(), figureImage1_1.getBorders());
@@ -1023,6 +1033,9 @@ public class ImagesSetter {
        model.addAttribute(figureImage10_22.getNameForColor(), figureImage10_22.getBorders());
        model.addAttribute(figureImage10_23.getNameForColor(), figureImage10_23.getBorders());
        model.addAttribute(figureImage10_24.getNameForColor(), figureImage10_24.getBorders());
+
+       model.addAttribute(figureImage00_00.getNameForColor(), figureImage00_00.getBorders());
+       model.addAttribute(figureImage00_01.getNameForColor(), figureImage00_01.getBorders());
    return model;
    }
 }

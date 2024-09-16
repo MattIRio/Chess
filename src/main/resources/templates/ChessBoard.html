@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Шахматная доска</title>
+    <title>Total War Chess</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -59,12 +59,6 @@ border: 1px solid transparent; /* Измените цвет границы на 
             padding: 0; /* Убираем отступ в кнопках */
             margin: 0; /* Убираем отступы между кнопками */
         }
-
-.cell.active {
-    border: 41px solid #ff5722; /* Широкая обводка при активации */
-}
-
-
 
 /* Позиционирование кнопок у левого нижнего угла */
 .button-container.bottom-left {
@@ -147,7 +141,7 @@ border: 1px solid transparent; /* Измените цвет границы на 
         <input type="hidden" name="toCell" value="">
 
         <!-- ROW 1 -->
-         <div class="row">
+                 <div class="row">
             <button th:style="'border: 1px solid black; border-radius: ' + ${cell1_1_color} + ';'" class="cell black" data-position="1-1" name="currentCell" value="cell1_1">
                 <img th:src="@{${cell1_1_img}}" style="width: 50px; height: 50px;">
             </button>
@@ -222,6 +216,7 @@ border: 1px solid transparent; /* Измените цвет границы на 
             </button>
 
         </div>
+
         <!-- ROW 2 -->
         <div class="row">
             <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_1_color} + ';'" class="cell white" data-position="2-1" name="currentCell" value="cell2_1">
@@ -900,14 +895,14 @@ border: 1px solid transparent; /* Измените цвет границы на 
 
 
         <div class="button-container top-right">
-            <button type="submit" class="corner-button" style="width: 100px;border-radius: 50%; height: 100px;" name="currentCell" value="button1">
-                <img src="images/catapulta.png" style="width: 110px; height: 110px;  margin-left: -25px; margin-top: -17px; object-fit: cover;" alt="Catapulta">
+            <button type="submit" class="corner-button" style="width: 100px;border-radius: 50%; height: 100px;" name="currentCell" value="cell00_01">
+                <img th:src="@{${cell00_01_img}}" style="width: 110px; height: 110px;  margin-left: -25px; margin-top: -17px; object-fit: cover;" alt="Catapulta">
             </button>
 
         </div>
         <div class="button-container bottom-left">
-            <button type="submit" class="corner-button" name="currentCell" value="clear" style="width: 80px; height: 70px;">
-            <img src="images/mortar.png" style="width: 110px; height: 110px;  margin-left: -34px; margin-top: -34px; object-fit: cover;" alt="morta">
+            <button type="submit" class="corner-button" name="currentCell" value="cell00_00" style="width: 80px; height: 70px;">
+            <img th:src="@{${cell00_00_img}}" style="width: 110px; height: 110px;  margin-left: -34px; margin-top: -34px; object-fit: cover;" alt="morta">
             </button>
         </div>
 

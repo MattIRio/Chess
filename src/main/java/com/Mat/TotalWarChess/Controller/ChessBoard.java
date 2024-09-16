@@ -28,7 +28,6 @@ public class ChessBoard {
         }
 
         model.addAttribute("players_turn_image", "images/Reikland.png");
-
         ImagesSetter imagesSetter = new ImagesSetter();
         imagesSetter.imagesSetter(model, session);
 
@@ -56,6 +55,9 @@ public class ChessBoard {
         Integer playersTurn = (Integer) session.getAttribute("playersTurn");
         String playersFigure = (String) session.getAttribute("playersFigure");
         String playersFirstChoosenFigure = (String) session.getAttribute("playersFirstChoosenFigure");
+        Integer isMortarTimeToShoot = (Integer) session.getAttribute("mortarTimeToShoot");
+        Integer isMortarTimeToShoot1 = (Integer) session.getAttribute("mortarTimeToShoot1");
+        String targetCell = (String) session.getAttribute("targetCell");
 
         if (playersFigure == null) {
             playersFigure = "";
@@ -68,6 +70,15 @@ public class ChessBoard {
         }
         if (playersFirstChoosenFigure == null) {
             playersFirstChoosenFigure = "";
+        }
+        if (isMortarTimeToShoot == null) {
+            isMortarTimeToShoot = 0;
+        }
+        if (isMortarTimeToShoot1 == null) {
+            isMortarTimeToShoot1 = 0;
+        }
+        if (targetCell == null) {
+            targetCell = "";
         }
 
 
@@ -99,10 +110,10 @@ public class ChessBoard {
 
 // MOVEMENTS
 
-        // GREEN SKIN PLAYER LOGIC
+        // ====================================================GREEN SKIN PLAYER LOGIC=================================================
             if (fromCell != null && playersTurn == 1)  {
 
-                //FIRST TURN PAWN
+                //==============================================FIRST TURN PAWN=====================================
                 if (firstCellSaver.isEmpty() && chessMoves.isTileEmpty(fromCell) != true && chessMoves.isFirstPlayerTurn(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && chessMoves.figureChecker(fromCell).equals("pawn")) {
                     firstCellSaver = fromCell;
                     session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
@@ -111,7 +122,7 @@ public class ChessBoard {
                     chessMoves.HightlightPosibleTurnsGreenSkin(fromCell);
 
                 //UN CHOOSE CELL
-                }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieGreenSkin(fromCell) == true && chessMoves.figureChecker(fromCell).equals("pawn")) {
+                }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && (chessMoves.figureCheckerSameOrAllieGreenSkin(fromCell) == true || fromCell.contains("cell00")) && chessMoves.figureChecker(fromCell).equals("pawn") && !firstCellSaver.contains("cell00")) {
 
                     chessMoves.clearHighlights();
                     firstCellSaver = "";
@@ -126,18 +137,19 @@ public class ChessBoard {
                     session.setAttribute("secondCellSaver", secondCellSaver);
                 }
 
-                //FIRST TURN QUEEN
+                // ===================================FIRST TURN QUEEN==========================================
                 if (firstCellSaver.isEmpty() && chessMoves.isTileEmpty(fromCell) != true && chessMoves.isFirstPlayerTurn(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && chessMoves.figureChecker(fromCell).equals("queen")) {
                     firstCellSaver = fromCell;
                     session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
                     chessMoves.hightlightTile(firstCellSaver);
                     session.setAttribute("firstCellSaver", firstCellSaver);
                     chessMoves.HightlightPosibleTurnsGreenskindQueen(fromCell);
-                }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieGreenSkin(fromCell) == true && chessMoves.figureChecker(fromCell).equals("queen")) {
+                }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieGreenSkin(fromCell) == true && chessMoves.figureChecker(fromCell).equals("queen") && !firstCellSaver.contains("cell00")) {
                     chessMoves.clearHighlights();
                     firstCellSaver = "";
                     chessMoves.unHightlightTile();
                     session.setAttribute("firstCellSaver", firstCellSaver);
+                    chessMoves.clearOficerTurnsGreenskin();
                 }
                 //SECOND TURN QUEEN
                 if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureChecker(firstCellSaver).equals("queen") && chessMoves.QueenLogicGreenskin(firstCellSaver, fromCell) && firstCellSaver != fromCell) {
@@ -145,13 +157,111 @@ public class ChessBoard {
                     secondCellSaver = fromCell;
                     chessMoves.unHightlightTile();
                     session.setAttribute("secondCellSaver", secondCellSaver);
+                    chessMoves.clearOficerTurnsGreenskin();
+                }
+                //===============================================FIRST TURN Wizard======================================
+                if (firstCellSaver.isEmpty() && chessMoves.isTileEmpty(fromCell) != true && chessMoves.isFirstPlayerTurn(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && chessMoves.figureChecker(fromCell).equals("wizard")) {
+                    firstCellSaver = fromCell;
+                    session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
+                    chessMoves.hightlightTile(firstCellSaver);
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                    chessMoves.HightlightPosibleTurnsGreenskinWizard(fromCell);
+                }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieGreenSkin(fromCell) == true && chessMoves.figureChecker(fromCell).equals("wizard") && !firstCellSaver.contains("cell00")) {
+                    chessMoves.clearHighlights();
+                    firstCellSaver = "";
+                    chessMoves.unHightlightTile();
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                    chessMoves.clearOficerTurnsGreenskin();
+                }
 
+                //SECOND TURN Wizard
+                else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureChecker(firstCellSaver).equals("wizard") && chessMoves.WizardLogicGreenskin(firstCellSaver, fromCell) && firstCellSaver != fromCell) {
+                    chessMoves.clearHighlights();
+                    secondCellSaver = fromCell;
+                    chessMoves.unHightlightTile();
+                    session.setAttribute("secondCellSaver", secondCellSaver);
+                    chessMoves.clearOficerTurnsGreenskin();
+                }
+
+                //===============================================FIRST TURN CAVALRY======================================
+                if (firstCellSaver.isEmpty() && chessMoves.isTileEmpty(fromCell) != true && chessMoves.isFirstPlayerTurn(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && chessMoves.figureChecker(fromCell).equals("cavalry")) {
+                    firstCellSaver = fromCell;
+                    session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
+                    chessMoves.hightlightTile(firstCellSaver);
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                    chessMoves.HightlightPosibleTurnsGreenskinCavalry(fromCell);
+                }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieGreenSkin(fromCell) == true && chessMoves.figureChecker(fromCell).equals("cavalry") && !firstCellSaver.contains("cell00")) {
+                    chessMoves.clearOficerTurnsGreenskin();
+                    chessMoves.clearCavalryTurns();
+                    chessMoves.clearHighlights();
+                    firstCellSaver = "";
+                    chessMoves.unHightlightTile();
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                }
+
+                //SECOND TURN CAVALRY
+                else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureChecker(firstCellSaver).equals("cavalry") && chessMoves.CavalryLogicGreenskin(firstCellSaver, fromCell) && firstCellSaver != fromCell) {
+                    chessMoves.clearHighlights();
+                    secondCellSaver = fromCell;
+                    chessMoves.unHightlightTile();
+                    session.setAttribute("secondCellSaver", secondCellSaver);
+                    chessMoves.clearOficerTurnsGreenskin();
+                    chessMoves.clearCavalryTurns();
+                }
+
+                //===============================================FIRST TURN MORTAR======================================
+                if (firstCellSaver.isEmpty() && chessMoves.isTileEmptyMorta(fromCell) != true && chessMoves.isFirstPlayerTurnMorta(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && fromCell.contains("cell00")) {
+                    firstCellSaver = fromCell;
+                    session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
+                    chessMoves.hightlightTileMortarGreenskin(firstCellSaver);
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                }
+                //UN CHOOSE CELL
+                else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieGreenSkin(fromCell) == true && firstCellSaver.contains("cell00")) {
+                    chessMoves.clearHighlights();
+                    firstCellSaver = "";
+                    chessMoves.unHightlightTileMortarGreenskin();
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                }
+                //SECOND TURN MORTAR
+                else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && firstCellSaver.contains("cell00") && chessMoves.MortarReiklandLogic(fromCell) && firstCellSaver != fromCell) {
+                    chessMoves.clearHighlights();
+                    secondCellSaver = fromCell;
+                    chessMoves.unHightlightTileMortarGreenskin();
+                    session.setAttribute("secondCellSaver", secondCellSaver);
+                }
+
+                //END OF MOVE MORTAR
+
+                if (!firstCellSaver.isEmpty() && !secondCellSaver.isEmpty() && firstCellSaver.contains("cell00")) {
+                    chessMoves.MortarGreenskinMOVE(fromCell);
+                    session.setAttribute("targetCell1", secondCellSaver);
+                    isMortarTimeToShoot1 = 1;
+                    session.setAttribute("mortarTimeToShoot1", isMortarTimeToShoot1);
+                    session.setAttribute("playersFirstChoosenFigure", firstCellSaver);
+                    firstCellSaver = "";
+                    secondCellSaver = "";
+                    session.setAttribute("secondCellSaver", secondCellSaver);
+                    session.setAttribute("firstCellSaver", firstCellSaver);
+                    playerMovePoints++;
+                    session.setAttribute("playerMovePoints", playerMovePoints);
+                    chessMoves.clearOficerTurnsGreenskin();
+                    chessMoves.clearCavalryTurns();
                 }
 
 
-                //END OF MOVE
+                //=======================================END OF MOVE============================================
                 if (!firstCellSaver.isEmpty() && !secondCellSaver.isEmpty()) {
-                    chessMoves.swapTiles(firstCellSaver, secondCellSaver);
+                    if (chessMoves.imagesArray.get(chessMoves.numberDetect(secondCellSaver)).getPath().contains("target")){
+                        chessMoves.swapTilesTargetSecondCell(firstCellSaver,secondCellSaver);
+                    } else if (chessMoves.imagesArray.get(chessMoves.numberDetect(firstCellSaver)).getPath().contains("target")){
+                        chessMoves.swapTilesTargetFirstCell(firstCellSaver,secondCellSaver);
+                    } else {
+                        chessMoves.imagesArray.get(22);
+                        chessMoves.swapTiles(firstCellSaver, secondCellSaver);
+                    }
+
+
                     session.setAttribute("playersFirstChoosenFigure", secondCellSaver);
                     playerMovePoints++;
                     firstCellSaver = "";
@@ -159,15 +269,15 @@ public class ChessBoard {
                     session.setAttribute("secondCellSaver", secondCellSaver);
                     session.setAttribute("firstCellSaver", firstCellSaver);
                     session.setAttribute("playerMovePoints", playerMovePoints);
-
+                    chessMoves.clearOficerTurnsGreenskin();
                 }
             }
 
 
-        // Reikland PLAYER LOGIC
+        // ===========================================Reikland PLAYER LOGIC========================================
         if (fromCell != null && playersTurn == 2) {
 
-            //FIRST TURN PAWNS
+            //===============================================FIRST TURN PAWNS======================================
             if (firstCellSaver.isEmpty() && chessMoves.isTileEmpty(fromCell) != true && chessMoves.isSecondPlayerTurn(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && chessMoves.figureChecker(fromCell).equals("pawn")) {
                 firstCellSaver = fromCell;
                 session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
@@ -176,7 +286,7 @@ public class ChessBoard {
                 chessMoves.HightlightPosibleTurnsReiklandPawn(fromCell);
             }
             //UN CHOOSE CELL
-            else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieReikland(fromCell) == true && chessMoves.figureChecker(fromCell).equals("pawn")) {
+            else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && (chessMoves.figureCheckerSameOrAllieReikland(fromCell) == true || fromCell.contains("cell00")) && chessMoves.figureChecker(firstCellSaver).equals("pawn") && !firstCellSaver.contains("cell00")) {
                 chessMoves.clearHighlights();
                 firstCellSaver = "";
                 chessMoves.unHightlightTile();
@@ -191,18 +301,19 @@ public class ChessBoard {
             }
 
 
-            //FIRST TURN QUEEN
+            //=================================================FIRST TURN QUEEN=====================================
             if (firstCellSaver.isEmpty() && chessMoves.isTileEmpty(fromCell) != true && chessMoves.isSecondPlayerTurn(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && chessMoves.figureChecker(fromCell).equals("queen")) {
                 firstCellSaver = fromCell;
                 session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
                 chessMoves.hightlightTile(firstCellSaver);
                 session.setAttribute("firstCellSaver", firstCellSaver);
                 chessMoves.HightlightPosibleTurnsReiklandQueen(fromCell);
-            }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieReikland(fromCell) == true && chessMoves.figureChecker(fromCell).equals("queen")) {
+            }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieReikland(fromCell) == true && chessMoves.figureChecker(firstCellSaver).equals("queen") && !firstCellSaver.contains("cell00")) {
                 chessMoves.clearHighlights();
                 firstCellSaver = "";
                 chessMoves.unHightlightTile();
                 session.setAttribute("firstCellSaver", firstCellSaver);
+                chessMoves.clearOficerTurnsReikland();
             }
             //SECOND TURN QUEEN
             if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureChecker(firstCellSaver).equals("queen") && chessMoves.QueenLogicReikland(firstCellSaver, fromCell) && firstCellSaver != fromCell) {
@@ -210,16 +321,108 @@ public class ChessBoard {
                 secondCellSaver = fromCell;
                 chessMoves.unHightlightTile();
                 session.setAttribute("secondCellSaver", secondCellSaver);
+                chessMoves.clearOficerTurnsReikland();
+            }
 
+        //===============================================FIRST TURN Wizard======================================
+        if (firstCellSaver.isEmpty() && chessMoves.isTileEmpty(fromCell) != true && chessMoves.isSecondPlayerTurn(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && chessMoves.figureChecker(fromCell).equals("wizard")) {
+            firstCellSaver = fromCell;
+            session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
+            chessMoves.hightlightTile(firstCellSaver);
+            session.setAttribute("firstCellSaver", firstCellSaver);
+            chessMoves.HightlightPosibleTurnsReiklandWizard(fromCell);
+        }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieReikland(fromCell) == true && chessMoves.figureChecker(firstCellSaver).equals("wizard") && !firstCellSaver.contains("cell00")) {
+            chessMoves.clearHighlights();
+            firstCellSaver = "";
+            chessMoves.unHightlightTile();
+            session.setAttribute("firstCellSaver", firstCellSaver);
+            chessMoves.clearOficerTurnsReikland();
+        }
+
+        //SECOND TURN Wizard
+        else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureChecker(firstCellSaver).equals("wizard") && chessMoves.WizardLogicReikland(firstCellSaver, fromCell) && firstCellSaver != fromCell) {
+            chessMoves.clearHighlights();
+            secondCellSaver = fromCell;
+            chessMoves.unHightlightTile();
+            session.setAttribute("secondCellSaver", secondCellSaver);
+            chessMoves.clearOficerTurnsReikland();
+        }
+
+        //===============================================FIRST TURN CAVALRY======================================
+            if (firstCellSaver.isEmpty() && chessMoves.isTileEmpty(fromCell) != true && chessMoves.isSecondPlayerTurn(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && chessMoves.figureChecker(fromCell).equals("cavalry")) {
+                firstCellSaver = fromCell;
+                session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
+                chessMoves.hightlightTile(firstCellSaver);
+                session.setAttribute("firstCellSaver", firstCellSaver);
+                chessMoves.HightlightPosibleTurnsReiklandCavalry(fromCell);
+            }else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieReikland(fromCell) == true && chessMoves.figureChecker(firstCellSaver).equals("cavalry") && !firstCellSaver.contains("cell00")) {
+                chessMoves.clearOficerTurnsReikland();
+                chessMoves.clearCavalryTurns();
+                chessMoves.clearHighlights();
+                firstCellSaver = "";
+                chessMoves.unHightlightTile();
+                session.setAttribute("firstCellSaver", firstCellSaver);
+            }
+
+        //SECOND TURN CAVALRY
+            else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureChecker(firstCellSaver).equals("cavalry") && chessMoves.CavalryLogicReikland(firstCellSaver, fromCell) && firstCellSaver != fromCell) {
+                chessMoves.clearHighlights();
+                secondCellSaver = fromCell;
+                chessMoves.unHightlightTile();
+                session.setAttribute("secondCellSaver", secondCellSaver);
+                chessMoves.clearOficerTurnsReikland();
+                chessMoves.clearCavalryTurns();
+            }
+
+//===============================================FIRST TURN MORTAR======================================
+            if (firstCellSaver.isEmpty() && chessMoves.isTileEmptyMorta(fromCell) != true && chessMoves.isSecondPlayerTurnMorta(fromCell) == true && !playersFirstChoosenFigure.equals(fromCell) && fromCell.contains("cell00")) {
+                firstCellSaver = fromCell;
+                session.setAttribute("playersFigure", chessMoves.figureChecker(firstCellSaver));
+                chessMoves.hightlightTileMortarReikland(firstCellSaver);
+                session.setAttribute("firstCellSaver", firstCellSaver);
+            }
+            //UN CHOOSE CELL
+            else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && chessMoves.figureCheckerSameOrAllieReikland(fromCell) == true && firstCellSaver.contains("cell00")) {
+                chessMoves.clearHighlights();
+                firstCellSaver = "";
+                chessMoves.unHightlightTileMortarReikland();
+                session.setAttribute("firstCellSaver", firstCellSaver);
+            }
+            //SECOND TURN MORTAR
+            else if (secondCellSaver.isEmpty() && !firstCellSaver.isEmpty() && firstCellSaver.contains("cell00") && chessMoves.MortarReiklandLogic(fromCell) && firstCellSaver != fromCell) {
+                chessMoves.clearHighlights();
+                secondCellSaver = fromCell;
+                chessMoves.unHightlightTileMortarReikland();
+                session.setAttribute("secondCellSaver", secondCellSaver);
+            }
+
+            //END OF MOVE MORTAR
+
+            if (!firstCellSaver.isEmpty() && !secondCellSaver.isEmpty() && firstCellSaver.contains("cell00")) {
+                chessMoves.MortarReiklandMOVE(fromCell);
+                session.setAttribute("targetCell", secondCellSaver);
+                isMortarTimeToShoot = 1;
+                session.setAttribute("mortarTimeToShoot", isMortarTimeToShoot);
+                session.setAttribute("playersFirstChoosenFigure", firstCellSaver);
+                firstCellSaver = "";
+                secondCellSaver = "";
+                session.setAttribute("secondCellSaver", secondCellSaver);
+                session.setAttribute("firstCellSaver", firstCellSaver);
+                playerMovePoints++;
+                session.setAttribute("playerMovePoints", playerMovePoints);
+                chessMoves.clearOficerTurnsReikland();
+                chessMoves.clearCavalryTurns();
             }
 
 
 
-
-
-            //END OF MOVE
-            if (!firstCellSaver.isEmpty() && !secondCellSaver.isEmpty()) {
-                chessMoves.swapTiles(firstCellSaver, secondCellSaver);
+//===================================END OF MOVE======================================
+            if (!firstCellSaver.isEmpty() && !secondCellSaver.isEmpty() && !firstCellSaver.contains("cell00")) {
+                if (chessMoves.imagesArray.get(chessMoves.numberDetect(secondCellSaver)).getPath().contains("target")){
+                    chessMoves.swapTilesTargetSecondCell(firstCellSaver,secondCellSaver);
+                } else {
+                    chessMoves.swapTiles(firstCellSaver, secondCellSaver);
+                }
                 session.setAttribute("playersFirstChoosenFigure", secondCellSaver);
                 firstCellSaver = "";
                 secondCellSaver = "";
@@ -227,10 +430,10 @@ public class ChessBoard {
                 session.setAttribute("firstCellSaver", firstCellSaver);
                 playerMovePoints++;
                 session.setAttribute("playerMovePoints", playerMovePoints);
+                chessMoves.clearOficerTurnsReikland();
+                chessMoves.clearCavalryTurns();
             }
         }
-
-
 
 
 
@@ -239,11 +442,24 @@ public class ChessBoard {
         if (playerMovePoints == 2 && playersTurn == 1){
             playerMovePoints = 0;
             playersTurn = 2;
+            if (isMortarTimeToShoot.equals(1)){
+                String targetCell1 = (String) (session.getAttribute("targetCell"));
+                chessMoves.mortarShooting(targetCell1);
+                session.setAttribute("targetCell", "");
+                session.setAttribute("mortarTimeToShoot", 0);
+            }
             session.setAttribute("playersFirstChoosenFigure", "");
 
-        } else if(playerMovePoints == 2 && playersTurn == 2){
+        }
+         else if(playerMovePoints == 2 && playersTurn == 2){
             playerMovePoints = 0;
             playersTurn = 1;
+            if (isMortarTimeToShoot1.equals(1)){
+                String targetCell2 = (String) (session.getAttribute("targetCell1"));
+                chessMoves.mortarShooting(targetCell2);
+                session.setAttribute("targetCell1", "");
+                session.setAttribute("mortarTimeToShoot1", 0);
+            }
             session.setAttribute("playersFirstChoosenFigure", "");
 
         }
@@ -285,6 +501,9 @@ public class ChessBoard {
             for (FigureImage figureImage : chessMoves.imagesArray) {
                 model.addAttribute(figureImage.getImageName(), figureImage.getPath());
             }
+        for (FigureImage figureImage : chessMoves.mortaArray) {
+            model.addAttribute(figureImage.getImageName(), figureImage.getPath());
+        }
 
 
             return "ChessBoard";
