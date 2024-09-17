@@ -65,7 +65,7 @@ public class ImagesSetter {
        FigureImage figureImage2_23 = new FigureImage("cell2_23", "cell2_23_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 47, "cell2_23_color");
        FigureImage figureImage2_24 = new FigureImage("cell2_24", "cell2_24_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 48, "cell2_24_color");
        // 3 ROW
-        FigureImage figureImage3_1 = new FigureImage("cell3_1", "cell3_1_img", "images/blank.png", "  ", 49, "cell3_1_color");
+       FigureImage figureImage3_1 = new FigureImage("cell3_1", "cell3_1_img", "images/blank.png", "  ", 49, "cell3_1_color");
        FigureImage figureImage3_2 = new FigureImage("cell3_2", "cell3_2_img", "images/blank.png", "  ", 50, "cell3_2_color");
        FigureImage figureImage3_3 = new FigureImage("cell3_3", "cell3_3_img", "images/blank.png", "  ", 51, "cell3_3_color");
        FigureImage figureImage3_4 = new FigureImage("cell3_4", "cell3_4_img", "images/blank.png", "  ", 52, "cell3_4_color");

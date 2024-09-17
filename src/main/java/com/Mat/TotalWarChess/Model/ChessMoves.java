@@ -92,7 +92,6 @@ public class ChessMoves {
 
     }
     //SWAP TILES TARGET SECOND CELL
-
     public void swapTilesTargetSecondCell(String firstTileName, String secondTileName) {
         String path = "";
         for (int i = 0; i < imagesArray.size(); i++) {
@@ -269,7 +268,7 @@ public class ChessMoves {
     public void hightlightTile(String tile) {
         for (int i = 0; i < imagesArray.size(); i++) {
             if (imagesArray.get(i).tileName.equals(tile)) {
-                imagesArray.get(i).setBorders("10px");
+                imagesArray.get(i).setBorders("8px");
                 break;
 
             }
@@ -289,7 +288,6 @@ public class ChessMoves {
     }
 
     //HIGHTLIGHT PICKED TILES MORTAR Reikland
-
     public void hightlightTileMortarGreenskin(String tile) {
         for (int i = 0; i < mortaArray.size(); i++) {
             if (mortaArray.get(i).tileName.equals(tile)) {
@@ -298,8 +296,6 @@ public class ChessMoves {
             }
         }
     }
-
-
 
     //UNHIGHTLIGHT PICKED TILES MORTAR Reikland
     public void unHightlightTileMortarReikland() {
@@ -326,9 +322,9 @@ public class ChessMoves {
     }
     
     //UNHIGHTLIGHT PICKED TILES
-    public void unHightlightTile() {
+    public void unHightlightTile(String tile) {
         for (int i = 0; i < imagesArray.size(); i++) {
-            if (imagesArray.get(i).borders.equals("10px")) {
+            if (imagesArray.get(i).getTileName().equals(tile)) {
                 imagesArray.get(i).setBorders("");
                 break;
 
@@ -431,7 +427,6 @@ public class ChessMoves {
 
         return returnstatement;
     }
-
 
     //FIRST PLAYER TURN CHECKER MORTA
     public boolean isFirstPlayerTurnMorta(String tile) {
@@ -557,7 +552,7 @@ public class ChessMoves {
     }
 
     //PAWN MOVEMENT LOGIC Reikland
-    public boolean PawnLogicReikland(String fromTile, String toTile) {
+        public boolean PawnLogicReikland(String fromTile, String toTile) {
         boolean returnstatement = false;
         int fromPosition = 0;
         int toPosition = 0;
@@ -624,6 +619,8 @@ public class ChessMoves {
         }
         return returnstatement;
     }
+
+
 
     //QUEEN MOVEMENT LOGIC Reikland
     public boolean QueenLogicReikland(String fromTile, String toTile) {
@@ -728,8 +725,6 @@ public class ChessMoves {
         return returnstatement;
     }
 
-
-
     //MORTAR MOVE Reikland
     public void MortarReiklandMOVE(String targetTile) {
         for (int i = 72; i < imagesArray.size(); i++) {
@@ -767,6 +762,9 @@ public class ChessMoves {
                             imagesArray.get(i).setPath("images/Target/greenskin_warlord_king_target.png");
                             break;
                         case "images/blank.png":
+                            imagesArray.get(i).setPath("images/Target/target_red.png");
+                            break;
+                        case "images/Target/target_black.png":
                             imagesArray.get(i).setPath("images/Target/target_red.png");
                             break;
                     }
@@ -812,6 +810,9 @@ public class ChessMoves {
                             imagesArray.get(i).setPath("images/Target/Reikland_wizard_target.png");
                             break;
                         case "images/blank.png":
+                            imagesArray.get(i).setPath("images/Target/target_black.png");
+                            break;
+                        case "images/Target/target_red.png":
                             imagesArray.get(i).setPath("images/Target/target_black.png");
                             break;
                     }
@@ -902,7 +903,7 @@ public class ChessMoves {
     }
 
     //HIGHTLIGHT POSIBLE TURNS FOR GREENSKIN QUEEN
-    public void HightlightPosibleTurnsGreenskindQueen(String fromTile) {
+        public void HightlightPosibleTurnsGreenskindQueen(String fromTile) {
         boolean returnstatement = false;
         int fromPosition = 0;
         boolean isfound1 = false;
@@ -975,6 +976,8 @@ public class ChessMoves {
             }
         }
     }
+
+
 
 
     //HIGHTLIGHT POSIBLE TURNS FOR GREEN SKIN PAWN
