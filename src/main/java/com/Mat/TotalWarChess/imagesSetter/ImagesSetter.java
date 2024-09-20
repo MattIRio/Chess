@@ -15,38 +15,38 @@ public class ImagesSetter {
        }
 
         // CREATING FIGURES 1 ROW
-       FigureImage figureImage1_1 = new FigureImage("cell1_1", "cell1_1_img", "images/greenskin/greenskin_shaman_wizard.png", "", 1, "cell1_1_color");
-       FigureImage figureImage1_2 = new FigureImage("cell1_2", "cell1_2_img", "images/greenskin/greenskin_hound.png", "", 2, "cell1_2_color");
-       FigureImage figureImage1_3 = new FigureImage("cell1_3", "cell1_3_img", "images/greenskin/greenskin_troll_rook.png", "", 3, "cell1_3_color");
+       FigureImage figureImage1_1 = new FigureImage("cell1_1", "cell1_1_img", "images/greenskin/greenskin_troll_rook.png", "", 1, "cell1_1_color");
+       FigureImage figureImage1_2 = new FigureImage("cell1_2", "cell1_2_img", "images/greenskin/greenskin_hound_sprinter.png", "", 2, "cell1_2_color");
+       FigureImage figureImage1_3 = new FigureImage("cell1_3", "cell1_3_img", "images/greenskin/greenskin_shaman_wizard.png", "", 3, "cell1_3_color");
        FigureImage figureImage1_4 = new FigureImage("cell1_4", "cell1_4_img", "images/greenskin/greenskin_black_orcs_queen.png", "", 4, "cell1_4_color");
        FigureImage figureImage1_5 = new FigureImage("cell1_5", "cell1_5_img", "images/greenskin/greenskin_troll_rook.png", "", 5, "cell1_5_color");
-       FigureImage figureImage1_6 = new FigureImage("cell1_6", "cell1_6_img", "images/greenskin/greenskin_chariot.png", "", 6, "cell1_6_color");
+       FigureImage figureImage1_6 = new FigureImage("cell1_6", "cell1_6_img", "images/greenskin/greenskin_cavalry.png", "", 6, "cell1_6_color");
        FigureImage figureImage1_7 = new FigureImage("cell1_7", "cell1_7_img", "images/greenskin/greenskin_shaman_wizard.png", "", 7, "cell1_7_color");
        FigureImage figureImage1_8 = new FigureImage("cell1_8", "cell1_8_img", "images/greenskin/greenskin_boyz_pawn.png", "", 8, "cell1_8_color");
        FigureImage figureImage1_9 = new FigureImage("cell1_9", "cell1_9_img", "images/blank.png", "", 9, "cell1_9_color");
-       FigureImage figureImage1_10 = new FigureImage("cell1_10", "cell1_10_img", "images/greenskin/greenskin_cavalry.png", "", 10, "cell1_10_color");
+       FigureImage figureImage1_10 = new FigureImage("cell1_10", "cell1_10_img", "images/greenskin/greenskin_chariot_oficer.png", "", 10, "cell1_10_color");
        FigureImage figureImage1_11 = new FigureImage("cell1_11", "cell1_11_img", "images/greenskin/greenskin_black_orcs_queen.png", "", 11, "cell1_11_color");
        FigureImage figureImage1_12 = new FigureImage("cell1_12", "cell1_12_img", "images/greenskin/greenskin_warlord_king.png", "", 12, "cell1_12_color");
        FigureImage figureImage1_13 = new FigureImage("cell1_13", "cell1_13_img", "images/greenskin/greenskin_shaman_wizard.png", "", 13, "cell1_13_color");
        FigureImage figureImage1_14 = new FigureImage("cell1_14", "cell1_14_img", "images/greenskin/greenskin_black_orcs_queen.png", "", 14, "cell1_14_color");
-       FigureImage figureImage1_15 = new FigureImage("cell1_15", "cell1_15_img", "images/greenskin/greenskin_cavalry.png", "", 15, "cell1_15_color");
+       FigureImage figureImage1_15 = new FigureImage("cell1_15", "cell1_15_img", "images/greenskin/greenskin_chariot_oficer.png", "", 15, "cell1_15_color");
        FigureImage figureImage1_16 = new FigureImage("cell1_16", "cell1_16_img", "images/blank.png", "", 16, "cell1_16_color");
-       FigureImage figureImage1_17 = new FigureImage("cell1_17", "cell1_17_img", "images/greenskin/greenskin_troll_rook.png", "", 17, "cell1_17_color");
-       FigureImage figureImage1_18 = new FigureImage("cell1_18", "cell1_18_img", "images/greenskin/greenskin_chariot.png", "", 18, "cell1_18_color");
-       FigureImage figureImage1_19 = new FigureImage("cell1_19", "cell1_19_img", "images/greenskin/greenskin_hound.png", "", 19, "cell1_19_color");
-       FigureImage figureImage1_20 = new FigureImage("cell1_20", "cell1_20_img", "images/greenskin/greenskin_chariot.png", "", 20, "cell1_20_color");
-       FigureImage figureImage1_21 = new FigureImage("cell1_21", "cell1_21_img", "images/greenskin/greenskin_hound.png", "", 21, "cell1_21_color");
-       FigureImage figureImage1_22 = new FigureImage("cell1_22", "cell1_22_img", "images/greenskin/greenskin_chariot.png", "", 22, "cell1_22_color");
-       FigureImage figureImage1_23 = new FigureImage("cell1_23", "cell1_23_img", "images/greenskin/greenskin_hound.png", "", 23, "cell1_23_color");
+       FigureImage figureImage1_17 = new FigureImage("cell1_17", "cell1_17_img", "images/greenskin/greenskin_boyz_pawn.png", "", 17, "cell1_17_color");
+       FigureImage figureImage1_18 = new FigureImage("cell1_18", "cell1_18_img", "images/greenskin/greenskin_cavalry.png", "", 18, "cell1_18_color");
+       FigureImage figureImage1_19 = new FigureImage("cell1_19", "cell1_19_img", "images/greenskin/greenskin_hound_sprinter.png", "", 19, "cell1_19_color");
+       FigureImage figureImage1_20 = new FigureImage("cell1_20", "cell1_20_img", "images/greenskin/greenskin_chariot_oficer.png", "", 20, "cell1_20_color");
+       FigureImage figureImage1_21 = new FigureImage("cell1_21", "cell1_21_img", "images/greenskin/greenskin_hound_sprinter.png", "", 21, "cell1_21_color");
+       FigureImage figureImage1_22 = new FigureImage("cell1_22", "cell1_22_img", "images/greenskin/greenskin_cavalry.png", "", 22, "cell1_22_color");
+       FigureImage figureImage1_23 = new FigureImage("cell1_23", "cell1_23_img", "images/greenskin/greenskin_hound_sprinter.png", "", 23, "cell1_23_color");
        FigureImage figureImage1_24 = new FigureImage("cell1_24", "cell1_24_img", "images/greenskin/greenskin_troll_rook.png", "", 24, "cell1_24_color");
        // 2 ROW
        FigureImage figureImage2_1 = new FigureImage("cell2_1", "cell2_1_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 25, "cell2_1_color");
-       FigureImage figureImage2_2 = new FigureImage("cell2_2", "cell2_2_img", "images/greenskin/greenskin_ogre_head.png", "  ", 26, "cell2_2_color");
-       FigureImage figureImage2_3 = new FigureImage("cell2_3", "cell2_3_img", "images/greenskin/greenskin_cuggle.png", "  ", 27, "cell2_3_color");
+       FigureImage figureImage2_2 = new FigureImage("cell2_2", "cell2_2_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 26, "cell2_2_color");
+       FigureImage figureImage2_3 = new FigureImage("cell2_3", "cell2_3_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 27, "cell2_3_color");
        FigureImage figureImage2_4 = new FigureImage("cell2_4", "cell2_4_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 28, "cell2_4_color");
        FigureImage figureImage2_5 = new FigureImage("cell2_5", "cell2_5_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 29, "cell2_5_color");
-       FigureImage figureImage2_6 = new FigureImage("cell2_6", "cell2_6_img", "images/greenskin/greenskin_ogre_head.png", "  ", 30, "cell2_6_color");
-       FigureImage figureImage2_7 = new FigureImage("cell2_7", "cell2_7_img", "images/greenskin/greenskin_cuggle.png", "  ", 31, "cell2_7_color");
+       FigureImage figureImage2_6 = new FigureImage("cell2_6", "cell2_6_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 30, "cell2_6_color");
+       FigureImage figureImage2_7 = new FigureImage("cell2_7", "cell2_7_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 31, "cell2_7_color");
        FigureImage figureImage2_8 = new FigureImage("cell2_8", "cell2_8_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 32, "cell2_8_color");
        FigureImage figureImage2_9 = new FigureImage("cell2_9", "cell2_9_img", "images/blank.png", "  ", 33, "cell2_9_color");
        FigureImage figureImage2_10 = new FigureImage("cell2_10", "cell2_10_img", "images/greenskin/greenskin_boyz_pawn.png", "  ", 34, "cell2_10_color");
@@ -234,36 +234,36 @@ public class ImagesSetter {
        FigureImage figureImage9_17 = new FigureImage("cell9_17", "cell9_17_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 209, "cell9_17_color");
        FigureImage figureImage9_18 = new FigureImage("cell9_18", "cell9_18_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 210, "cell9_18_color");
        FigureImage figureImage9_19 = new FigureImage("cell9_19", "cell9_19_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 211, "cell9_19_color");
-       FigureImage figureImage9_20 = new FigureImage("cell9_20", "cell9_20_img", "images/Reikland/Reikland_tank_head.png", "  ", 212, "cell9_20_color");
+       FigureImage figureImage9_20 = new FigureImage("cell9_20", "cell9_20_img", "images/Reikland/Reikland_tank_head1.png", "  ", 212, "cell9_20_color");
        FigureImage figureImage9_21 = new FigureImage("cell9_21", "cell9_21_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 213, "cell9_21_color");
        FigureImage figureImage9_22 = new FigureImage("cell9_22", "cell9_22_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 214, "cell9_22_color");
        FigureImage figureImage9_23 = new FigureImage("cell9_23", "cell9_23_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 215, "cell9_23_color");
        FigureImage figureImage9_24 = new FigureImage("cell9_24", "cell9_24_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 216, "cell9_24_color");
        // 10 ROW
-       FigureImage figureImage10_1 = new FigureImage("cell10_1", "cell10_1_img", "images/Reikland/Reikland_wizard.png", "  ", 217, "cell10_1_color");
+       FigureImage figureImage10_1 = new FigureImage("cell10_1", "cell10_1_img", "images/Reikland/Reikland_griffin_rook.png", "  ", 217, "cell10_1_color");
        FigureImage figureImage10_2 = new FigureImage("cell10_2", "cell10_2_img", "images/Reikland/Reikland_demigriph_queen.png", "  ", 218, "cell10_2_color");
        FigureImage figureImage10_3 = new FigureImage("cell10_3", "cell10_3_img", "images/Reikland/Reikland_cavalry.png", "  ", 219, "cell10_3_color");
-       FigureImage figureImage10_4 = new FigureImage("cell10_4", "cell10_4_img", "images/Reikland/Reikland_griffin.png", "  ", 220, "cell10_4_color");
+       FigureImage figureImage10_4 = new FigureImage("cell10_4", "cell10_4_img", "images/Reikland/Reikland_wizard.png", "  ", 220, "cell10_4_color");
        FigureImage figureImage10_5 = new FigureImage("cell10_5", "cell10_5_img", "images/Reikland/Reikland_cavalry.png", "  ", 221, "cell10_5_color");
-       FigureImage figureImage10_6 = new FigureImage("cell10_6", "cell10_6_img", "images/Reikland/Reikland_griffin.png", "  ", 222, "cell10_6_color");
+       FigureImage figureImage10_6 = new FigureImage("cell10_6", "cell10_6_img", "images/Reikland/Reikland_witchhunter_sprinter.png", "  ", 222, "cell10_6_color");
        FigureImage figureImage10_7 = new FigureImage("cell10_7", "cell10_7_img", "images/Reikland/Reikland_cavalry.png", "  ", 223, "cell10_7_color");
-       FigureImage figureImage10_8 = new FigureImage("cell10_8", "cell10_8_img", "images/Reikland/Reikland_witchhunter.png", "  ", 224, "cell10_8_color");
+       FigureImage figureImage10_8 = new FigureImage("cell10_8", "cell10_8_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 224, "cell10_8_color");
        FigureImage figureImage10_9 = new FigureImage("cell10_9", "cell10_9_img", "images/blank.png", "  ", 225, "cell10_9_color");
        FigureImage figureImage10_10 = new FigureImage("cell10_10", "cell10_10_img", "images/Reikland/Reikland_oficer.png", "  ", 226, "cell10_10_color");
        FigureImage figureImage10_11 = new FigureImage("cell10_11", "cell10_11_img", "images/Reikland/Reikland_demigriph_queen.png", "  ", 227, "cell10_11_color");
-       FigureImage figureImage10_12 = new FigureImage("cell10_12", "cell10_12_img", "images/Reikland/Reikland_King.png", "  ", 228, "cell10_12_color");
-       FigureImage figureImage10_13 = new FigureImage("cell10_13", "cell10_13_img", "images/Reikland/Reikland_demigriph_queen.png", "  ", 229, "cell10_13_color");
-       FigureImage figureImage10_14 = new FigureImage("cell10_14", "cell10_14_img", "images/Reikland/Reikland_wizard.png", "  ", 230, "cell10_14_color");
+       FigureImage figureImage10_12 = new FigureImage("cell10_12", "cell10_12_img", "images/Reikland/Reikland_king.png", "  ", 228, "cell10_12_color");
+       FigureImage figureImage10_13 = new FigureImage("cell10_13", "cell10_13_img", "images/Reikland/Reikland_wizard.png", "  ", 229, "cell10_13_color");
+       FigureImage figureImage10_14 = new FigureImage("cell10_14", "cell10_14_img", "images/Reikland/Reikland_demigriph_queen.png", "  ", 230, "cell10_14_color");
        FigureImage figureImage10_15 = new FigureImage("cell10_15", "cell10_15_img", "images/Reikland/Reikland_oficer.png", "  ", 231, "cell10_15_color");
        FigureImage figureImage10_16 = new FigureImage("cell10_16", "cell10_16_img", "images/blank.png", "  ", 232, "cell10_16_color");
        FigureImage figureImage10_17 = new FigureImage("cell10_17", "cell10_17_img", "images/Reikland/Reikland_spearman_pawn.png", "  ", 233, "cell10_17_color");
        FigureImage figureImage10_18 = new FigureImage("cell10_18", "cell10_18_img", "images/Reikland/Reikland_wizard.png", "  ", 234, "cell10_18_color");
-       FigureImage figureImage10_19 = new FigureImage("cell10_19", "cell10_19_img", "images/Reikland/Reikland_witchhunter.png", "  ", 235, "cell10_19_color");
-       FigureImage figureImage10_20 = new FigureImage("cell10_20", "cell10_20_img", "images/Reikland/Reikland_tank_back.png", "  ", 236, "cell10_20_color");
-       FigureImage figureImage10_21 = new FigureImage("cell10_21", "cell10_21_img", "images/Reikland/Reikland_witchhunter.png", "  ", 237, "cell10_21_color");
+       FigureImage figureImage10_19 = new FigureImage("cell10_19", "cell10_19_img", "images/Reikland/Reikland_witchhunter_sprinter.png", "  ", 235, "cell10_19_color");
+       FigureImage figureImage10_20 = new FigureImage("cell10_20", "cell10_20_img", "images/Reikland/Reikland_tank_back1.png", "  ", 236, "cell10_20_color");
+       FigureImage figureImage10_21 = new FigureImage("cell10_21", "cell10_21_img", "images/Reikland/Reikland_witchhunter_sprinter.png", "  ", 237, "cell10_21_color");
        FigureImage figureImage10_22 = new FigureImage("cell10_22", "cell10_22_img", "images/Reikland/Reikland_wizard.png", "  ", 238, "cell10_22_color");
-       FigureImage figureImage10_23 = new FigureImage("cell10_23", "cell10_23_img", "images/Reikland/Reikland_griffin.png", "  ", 239, "cell10_23_color");
-       FigureImage figureImage10_24 = new FigureImage("cell10_24", "cell10_24_img", "images/Reikland/Reikland_griffin.png", "  ", 240, "cell10_24_color");
+       FigureImage figureImage10_23 = new FigureImage("cell10_23", "cell10_23_img", "images/Reikland/Reikland_oficer.png", "  ", 239, "cell10_23_color");
+       FigureImage figureImage10_24 = new FigureImage("cell10_24", "cell10_24_img", "images/Reikland/Reikland_griffin_rook.png", "  ", 240, "cell10_24_color");
 
 
        FigureImage figureImage00_00 = new FigureImage("cell00_00", "cell00_00_img", "images/mortar_reikland.png", "  ", 000, "cell00_00_color");
@@ -522,11 +522,8 @@ public class ImagesSetter {
 
        chessMoves.addFigureMorta(figureImage00_00);
        chessMoves.addFigureMorta(figureImage00_01);
+       session.setAttribute("chessMoves", chessMoves);
 
-
-
-
-        session.setAttribute("chessMoves", chessMoves);
         // ADDING TO MODEL 1 ROW
        model.addAttribute(figureImage1_1.getImageName(), figureImage1_1.getPath());
        model.addAttribute(figureImage1_2.getImageName(), figureImage1_2.getPath());

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TotalWarChess</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/images/living-sun-illustration-symbol-warmth-600nw-2186318345.png');
+            background-size: 1300px;
+            background-position: 30px 400px;
+            background-repeat: no-repeat;
+            background-position: center -247px ;
+            background-color: #FFC861; /* Цвет фона для всей страницы */
+            color: #fff; /* Белый цвет текста для контраста */
+            padding: 20px; /* Отступы вокруг контента */
+        }
+        .container-fluid {
+            max-width: 800px; /* Максимальная ширина контейнера */
+            margin: 0 auto; /* Центрирование контейнера */
+            background-color: #360126; /* Темно-серый фон для контейнера */
+            padding: 20px; /* Отступы внутри контейнера */
+            border-radius: 10px; /* Скругление углов контейнера */
+            margin-top: 200px; /* Отступ сверху на 200 пикселей */
+            height: 380px;
+        }
+        .form-control {
+            width: 100%; /* Занимает всю ширину колонки */
+            height: 50px; /* Высота поля ввода */
+            font-size: 18px; /* Размер шрифта в поле ввода */
+        }
+
+        .btn-primary {
+            font-size: 18px; /* Размер шрифта кнопки */
+            padding: 100px 50px; /* Внутренние отступы кнопки */
+        }
+        .btn-primary1 {
+            width: 300px;
+            font-size: 18px; /* Размер шрифта кнопки */
+            padding: 10px 20px; /* Внутренние отступы кнопки */
+            background-color: #007bff; /* Цвет кнопки */
+            border-color: #007bff; /* Цвет границы кнопки */
+            color: white; /* Цвет текста кнопки */
+        }
+
+        .btn-primary1:hover {
+            background-color: #F54512; /* Цвет фона при наведении */
+            border-color: #004085; /* Цвет границы при наведении */
+        }
+
+        .form-container {
+            margin-top: 20px; /* Отступ сверху для контейнера форм */
+        }
+        .btn-right {
+            margin-left: 230px; /* Отступ слева для кнопки */
+        }
+        .label-second-player {
+    margin-left: 187px; /* Отступ слева на 30 пикселей */
+}
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <form action="/processLogin" method="post" th:action="@{processLogin}" th:object="${loginModel}">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <br><!br>
+                <br><!br>
+                <br><!br>
+                <br><!br>
+                <br><!br>
+                <h3>VICTORY GOES TO THE PLAYER</h3>
+                <h3 th:text="${Victor}"></h3>
+                <h3 th:text="${VictorFraction}"></h3>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

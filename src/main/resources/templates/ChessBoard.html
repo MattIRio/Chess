@@ -8,24 +8,24 @@
     <style>
         body {
 
-          background-color: #f7f7ac; /* Светлый желтоватый цвет фона */
-          margin: 0; /* Удаление стандартных отступов */
-          padding: 0; /* Удаление стандартных внутренних отступов */
-          height: 100vh; /* Полная высота экрана */
-          overflow: hidden; /* Удаление полос прокрутки */
+          background-color: #f7f7ac;
+          margin: 0;
+          padding: 0;
+          height: 100vh;
+          overflow: hidden;
         }
 
 .corner-button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: #d88514;
 }
 .corner-buttonn {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #deab19;
+  background-color: #ffffff;
 }
 
 
@@ -33,9 +33,43 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Расстояние между кнопками */
+  gap: 10px;
 }
 
+.overlay {
+          position: fixed;
+          top: 300px;
+          left: -350px;
+          width: 800px;
+          height: 250px;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none; /
+        }
+
+.form-popup {
+          position: relative;
+    width: 800px; /
+    height: 250;
+    background-color: rgba(128, 128, 128, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+.form-popup p {
+          margin: 0;
+          padding: 0;
+        }
+.close-btn {
+          margin-top: 10px;
+          background-color: #d88514;
+          color: white;
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+        }
 
 :root {
   --top-right-top: 110px;
@@ -44,67 +78,63 @@
   --bottom-left-left: 70px;
 }
 
-/* Позиционирование кнопок у правого верхнего угла */
+
 .button-container.top-right {
   top: var(--top-right-top);
   right: var(--top-right-right);
 }
 
 .cell {
-border: 1px solid transparent; /* Измените цвет границы на прозрачный */
-    padding: 0; /* Убедитесь, что тело кнопки не имеет отступов */
+border: 1px solid transparent;
+    padding: 0; /
     box-sizing:
     transition: bor der-color 0.3s;
-            transition: border-width 0.3s ease; /* Плавное изменение ширины обводки */
-            padding: 0; /* Убираем отступ в кнопках */
-            margin: 0; /* Убираем отступы между кнопками */
+            transition: border-width 0.3s ease;
+            padding: 0;
+            margin: 0;
         }
 
-/* Позиционирование кнопок у левого нижнего угла */
+
 .button-container.bottom-left {
   bottom: var(--bottom-left-bottom);
   left: var(--bottom-left-left);
 }
 
-/* Стили для шахматной доски и вертикальных таблиц */
+
 .chess-board-container {
-  position: relative; /* Обеспечивает, что кнопки будут позиционироваться относительно этого контейнера */
+  position: relative;
 }
 
 .vertical-table {
   position: absolute;
-  /* Добавьте любые другие стили для таблиц */
 }
 .cell.selected {
-  /* This class is used for persistent selection */
 }
 .vertical-table.top-right {
   top: 0;
   right: 0;
-  /* Можно добавить дополнительные стили для этого положения */
 }
 .centered-text {
     text-align: center;
 }
 #chessboard-container {
-    background-color: #a7f28d; /* Замените на нужный вам цвет */
-    padding: 0px; /* Добавьте отступ, если нужно */
-    border: 2px solid black; /* При желании добавьте границы */
+    background-color: #a7f28d;
+    padding: 0px;
+    border: 2px solid black;
 }
 .vertical-table.bottom-left {
   bottom: 0;
   left: 0;
-  /* Можно добавить дополнительные стили для этого положения */
 }
 #image-container {
-    display: inline-block; /* Makes the image inline with the text */
-    vertical-align: middle; /* Aligns the image to the middle of the text */
-    margin-left: 10px; /* Adjust margin to add spacing between text and image */
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
 }
 
 #positioned-image {
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Maintain aspect ratio */
+    width: 50px;
+    height: 50px;
 }
     </style>
 </head>
@@ -112,6 +142,21 @@ border: 1px solid transparent; /* Измените цвет границы на 
 <div class="label" ><span th:text="${username}"></span></div>
 <div class="another-label"><span th:text="${secondUsername}"></span></div>
 <div class="centered-text">TOTAL WAR CHESS<br>
+    <div class="button-container" style="position: absolute; top: 400px; left: -840px;">
+    <button class="corner-button" onclick="openForm()" style="width: 170px; height: 50px;">RULES</button>
+
+    <div id="overlay" class="overlay">
+        <div class="form-popup">
+            <p>TOTAL WAR CHESS RULES</p>
+            <p>1) The game lasts until 70% of the opponent's pieces are destroyed, if the opponent's king is destroyed this number is reduced to 50%.</p>
+            <p>2) Each player has the ability to move two different pieces during a turn, or move a piece and fire a siege cannon.</p>
+            <p>3) Siege cannons only shoot at the squares between rows 2 and 8.</p>
+            <p>4) When a siege cannon is fired, the figure on the marked spot at the beginning of the turn of the player who fired the siege cannon will be destroyed.</p>
+            <button class="close-btn" onclick="closeForm()">CLOSE</button>
+        </div>
+    </div>
+    </div>
+
     <br>
     <span th:text="${playerss_turn}"></span>'s turn
 <div id="image-container">
@@ -119,29 +164,13 @@ border: 1px solid transparent; /* Измените цвет границы на 
 </div>
 </div>
 </p>
-
-<div class="vertical-table top-right">
-    <div class="table-cell">Текст 1</div>
-    <div class="table-cell">Текст 2</div>
-    <div class="table-cell">Текст 3</div>
-    <!-- Добавьте больше текста по мере необходимости -->
-</div>
-
-<div class="vertical-table bottom-left">
-    <div class="table-cell">Текст A</div>
-    <div class="table-cell">Текст B</div>
-    <div class="table-cell">Текст C</div>
-
-    <!-- Добавьте больше текста по мере необходимости -->
-</div>
-
 <div class="chessboard" id="chessboard-container">
     <form action="/chessboard" method="POST">
         <input type="hidden" name="fromCell" value="">
         <input type="hidden" name="toCell" value="">
 
         <!-- ROW 1 -->
-                 <div class="row">
+        <div class="row">
             <button th:style="'border: 1px solid black; border-radius: ' + ${cell1_1_color} + ';'" class="cell black" data-position="1-1" name="currentCell" value="cell1_1">
                 <img th:src="@{${cell1_1_img}}" style="width: 50px; height: 50px;">
             </button>
@@ -216,7 +245,6 @@ border: 1px solid transparent; /* Измените цвет границы на 
             </button>
 
         </div>
-
         <!-- ROW 2 -->
         <div class="row">
             <button th:style="'border: 1px solid black; border-radius: ' + ${cell2_1_color} + ';'" class="cell white" data-position="2-1" name="currentCell" value="cell2_1">
@@ -802,7 +830,7 @@ border: 1px solid transparent; /* Измените цвет границы на 
                 <img th:src="@{${cell9_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
             <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_20_color} + ';'" class="cell white" data-position="9-20" name="currentCell" value="cell9_20">
-                <img th:src="@{${cell9_20_img}}" alt="Button Image" style="width: 50px; height: 78px;">
+                <img th:src="@{${cell9_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
             <button th:style="'border: 1px solid black; border-radius: ' + ${cell9_21_color} + ';'" class="cell black" data-position="9-21" name="currentCell" value="cell9_21">
                 <img th:src="@{${cell9_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
@@ -877,7 +905,7 @@ border: 1px solid transparent; /* Измените цвет границы на 
                 <img th:src="@{${cell10_19_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
             <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_20_color} + ';'" class="cell black" data-position="10-20" name="currentCell" value="cell10_20">
-                <img th:src="@{${cell10_20_img}}" alt="Button Image" style="width: 50px; height: 75px; margin-top: -18px;">
+                <img th:src="@{${cell10_20_img}}" alt="Button Image" style="width: 50px; height: 50px;">
             </button>
             <button th:style="'border: 1px solid black; border-radius: ' + ${cell10_21_color} + ';'" class="cell white" data-position="10-21" name="currentCell" value="cell10_21">
                 <img th:src="@{${cell10_21_img}}" alt="Button Image" style="width: 50px; height: 50px;">
@@ -909,7 +937,17 @@ border: 1px solid transparent; /* Измените цвет границы на 
     </form>
 </div>
 </div>
+<script>
 
+    function openForm() {
+        document.getElementById("overlay").style.display = "flex";
+    }
+
+
+    function closeForm() {
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
 
 </div>
 </body>
